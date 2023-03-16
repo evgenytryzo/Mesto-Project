@@ -23,4 +23,7 @@
 @import url(./../blocks/element/__name/element__name.css);
 @import url(./../blocks/element/__photo/element__photo.css);
 
+@import url(./../blocks/footer/footer.css);
+@import url(./../blocks/footer/__copyright/footer__copyright.css);
+
 @import url(./../fonts/fonts.css);
