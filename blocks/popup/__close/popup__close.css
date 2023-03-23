@@ -1,5 +1,9 @@
 .popup_close {
     color: white;
-    margin: 0 0 0 450px;
+    margin: 0 0 8px 473px;
     cursor: pointer;
+}
+
+.popup_close:hover {
+    opacity: 0.6;
 }
