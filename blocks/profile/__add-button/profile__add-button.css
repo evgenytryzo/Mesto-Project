@@ -9,10 +9,11 @@
     align-self: center;
     outline: none;
     box-sizing: border-box;
-    border: 1px solid #fff;
+    border: 2px solid #fff;
     background-image: url(../../../images/add-button.svg);
     background-repeat: no-repeat;
     background-position: center;
+    border-radius: 2px;
 }
 
 .profile__add-button:hover {
@@ -21,7 +22,8 @@
 
 @media screen and (max-width: 700px) {
     .profile__add-button {
-        width: calc(100% - 38px);
+        width: 100%;
         margin: 0 auto;
+        background-size: 16px 16px;
     }
 }
