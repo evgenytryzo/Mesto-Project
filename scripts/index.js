@@ -8,19 +8,18 @@ const detailInput = moreInfoPopup.querySelector('.popup__input_type_detail')
 const profileDetail = document.querySelector('.profile__details')
 
 editButtonLink.addEventListener('click', () => {
-    moreInfoPopup.classList.add('popup_open')
-
+    moreInfoPopup.classList.add('popup_opened')
     nameInput.value = profileName.textContent;
     detailInput.value = profileDetail.textContent;
-    })
+})
 
 moreInfoPopupClose.addEventListener('click', () => {
-    moreInfoPopup.classList.remove('popup_open')
+    moreInfoPopup.classList.remove('popup_opened')
 })
 
 moreInfoPopupForm.addEventListener('submit', (event) => {
     event.preventDefault();
     profileName.textContent = nameInput.value;
     profileDetail.textContent = detailInput.value;
-    moreInfoPopup.classList.remove('popup_open')
+    moreInfoPopup.classList.remove('popup_opened')
 })

@@ -12,7 +12,14 @@
     box-sizing: border-box;
     cursor: pointer;
     border: none;
-
 }
 
+.element__like-button:hover {
+    opacity: 0.5;
+}
+
+.element__like-button:active {
+    background-image: url(../../../images/like-button-active.svg);
+    opacity: 1;
+}
 

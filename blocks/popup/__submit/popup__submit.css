@@ -11,7 +11,7 @@
     color: white;
     cursor: pointer;
 
-    font-family: 'Inter';
+    font-family: 'Inter', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -28,5 +28,6 @@
         width: calc(100% - 44px);
         font-size: 14px;
         line-height: 17px;
+        margin: 15px auto 25px;
     }
 }

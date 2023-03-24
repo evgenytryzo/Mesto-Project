@@ -1,5 +1,5 @@
 .profile__name {
-    font-family: 'Inter';
+    font-family: 'Inter', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 42px;
@@ -16,7 +16,9 @@
         font-size: 27px;
         line-height: 33px;
         text-align: center;
-        margin: 0 0 10px 0;
-        max-width: 186px;
+        margin: 0 0 7px 0;
+        max-width: 189px;
+        min-width: 114px;
+        transform: translateX(10px);
     }
 }
