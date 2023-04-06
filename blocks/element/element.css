@@ -4,4 +4,5 @@
     overflow: hidden;
     display: grid;
     grid-template-rows: auto auto;
+    position: relative;
 }

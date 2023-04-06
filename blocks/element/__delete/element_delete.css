@@ -1,4 +1,17 @@
 .element__delete {
-    height: 20px;
-    width: 20px;
+    cursor: pointer;
+    height: 19px;
+    width: 18px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-image: url("../../../images/delete.svg");
+    outline: none; /* Для синий ободки */
+    border: 0;
+    background-color: rgba(0, 0 ,0 , 0);
+    background-size: cover;
+}
+
+.element__delete:hover {
+    opacity: 0.6;
 }

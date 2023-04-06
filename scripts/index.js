@@ -68,7 +68,6 @@ editButtonLink.addEventListener('click', () => {
 
 moreInfoPopupClose.addEventListener('click', () => {
     closePopup();
-    console.log(moreInfoPopupClose)
 })
 
 moreInfoPopupForm.addEventListener('submit', (event) => {
@@ -94,6 +93,8 @@ const popupAddClose = popupAdd.querySelector('.popup__close')
 
 popupAddClose.addEventListener('click', () => {
     popupAdd.classList.remove('popup_opened')
+
+
 })
 
 
@@ -114,6 +115,9 @@ const PopupAddSubmit = (event) => {
         link,
     }
     renderElement(createElement((elementData)))
+
+    nameInput.value = ""
+    linkInput.value = ""
 }
 
 handlePopupAdd.addEventListener('submit', PopupAddSubmit)
