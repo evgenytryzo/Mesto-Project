@@ -5,48 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="effc6121-f9f1-448f-a572-29e3f21c615a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/mesto.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mesto.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/popup/__image-container/popup__image-container.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/popup/__image-name/popup__image-name.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/popup/__image/popup__image.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/body/body.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/body/body.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/content/content.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/content/content.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/element/__container/element__container.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/element/__container/element__container.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/element/__delete/element_delete.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/element/__delete/element_delete.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/element/__like-button/_active/element__like-button_active.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/element/__like-button/_active/element__like-button_active.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/element/__like-button/element__like-button.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/element/__like-button/element__like-button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/element/__name/element__name.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/element/__name/element__name.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blocks/element/__photo/element__photo.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/element/__photo/element__photo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/element/element.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/element/element.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/elements/elements.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/elements/elements.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/footer/__copyright/footer__copyright.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/footer/__copyright/footer__copyright.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/footer/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/footer/footer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/header/__line/header__line.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/header/__line/header__line.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/header/__logo/header__logo.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/header/__logo/header__logo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/header/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/header/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/page/page.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/page/page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/popup/__close/popup__close.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/__close/popup__close.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/popup/__container/popup__container.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/__container/popup__container.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/popup/__form/popup__form.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/__form/popup__form.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/popup/__input/popup__input.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/__input/popup__input.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/popup/__name/popup__name.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/__name/popup__name.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/popup/__submit/popup__submit.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/__submit/popup__submit.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/popup/_opened/popup_opened.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/_opened/popup_opened.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/popup/popup.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/popup.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/profile/__add-button/profile__add-button.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/profile/__add-button/profile__add-button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/profile/__avatar/profile__avatar.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/profile/__avatar/profile__avatar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/profile/__details/profile__details.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/profile/__details/profile__details.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/profile/__edit-button/profile__edit-button.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/profile/__edit-button/profile__edit-button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/profile/__info/profile__info.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/profile/__info/profile__info.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/profile/__name/profile__name.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/profile/__name/profile__name.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/profile/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/profile/profile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/fonts.css" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/fonts.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/arrElements.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/arrElements.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/normalize.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/normalize.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +54,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "inlay.hints",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -134,7 +101,7 @@
       <workItem from="1680724262350" duration="4101000" />
       <workItem from="1680809071673" duration="6214000" />
       <workItem from="1680955684925" duration="671000" />
-      <workItem from="1681927862451" duration="623000" />
+      <workItem from="1681927862451" duration="7233000" />
     </task>
     <servers />
   </component>
