@@ -18,35 +18,40 @@ const closePopupImage = handlePopupImage.querySelector('.popup__close');
 const popupImage = handlePopupImage.querySelector('.popup__image');
 const popupName = handlePopupImage.querySelector('.popup__image-name');
 
-closePopupImage.addEventListener('click', () => {
-    handlePopupImage.classList.remove('popup_opened')
-})
+function openPopup(popupElement) {
+    popupElement.classList.add('popup_opened');
+}
 
+function closePopup(popupElement) {
+    popupElement.classList.remove('popup_opened')
+}
+closePopupImage.addEventListener('click', () => {
+    closePopup(handlePopupImage)
+})
 
 const elements = document.querySelector('.elements')
 const elementsTemplate = document.querySelector('.elements-template')
+
 
 const createElement = (elementData) => {
     const element = elementsTemplate.content
         .querySelector('.element')
         .cloneNode(true);
 
-    const cardImage = element.querySelector('.element__photo')
-    const cardName = element.querySelector('.element__name')
     const elementName = element.querySelector('.element__name');
     const elementPhoto = element.querySelector('.element__photo');
 
-    cardName.textContent = elementData.name;
-    cardImage.src = elementData.link;
-    cardImage.alt = elementData.name;
+    elementName.textContent = elementData.name;
+    elementPhoto.src = elementData.link;
+    elementPhoto.alt = elementData.name;
 
 
     elementName.textContent = elementData.name;
     elementPhoto.src = elementData.link;
     elementPhoto.alt = elementData.name;
 
-    cardImage.addEventListener('click', () => {
-        handlePopupImage.classList.add('popup_opened')
+    elementPhoto.addEventListener('click', () => {
+        openPopup(handlePopupImage);
         popupImage.src = elementData.link;
         popupImage.alt = elementData.name;
         popupName.textContent = elementData.name;
@@ -79,18 +84,16 @@ initialCards.forEach(element => {
     renderElement(createElement(element))
 })
 
-const closePopup = () => {
-    moreInfoPopup.classList.remove('popup_opened');
-}
 
 editButtonLink.addEventListener('click', () => {
-    moreInfoPopup.classList.add('popup_opened');
+    openPopup(moreInfoPopup);
     nameInput.value = profileName.textContent;
     detailInput.value = profileDetail.textContent;
 })
 
 moreInfoPopupClose.addEventListener('click', () => {
-    closePopup();
+    closePopup(moreInfoPopup);
+
 })
 
 moreInfoPopupForm.addEventListener('submit', (event) => {
@@ -103,11 +106,11 @@ moreInfoPopupForm.addEventListener('submit', (event) => {
 
 
 buttonAdd.addEventListener('click', () => {
-    popupAdd.classList.add('popup_opened');
+    openPopup(popupAdd);
 })
 
 closePopupSubmit.addEventListener('click', () => {
-    popupAdd.classList.remove('popup_opened')
+    closePopup(popupAdd)
 })
 
 
@@ -115,14 +118,12 @@ closePopupSubmit.addEventListener('click', () => {
 const popupAddClose = popupAdd.querySelector('.popup__close')
 
 popupAddClose.addEventListener('click', () => {
-    popupAdd.classList.remove('popup_opened')
+    closePopup(popupAdd)
 
 
 })
 
-
-
-const PopupAddSubmit = (event) => {
+const popupAddSubmit = (event) => {
     event.preventDefault();
 
     const nameInput = handlePopupAdd.querySelector('.popup__input_type_name')
@@ -143,4 +144,4 @@ const PopupAddSubmit = (event) => {
     linkInput.value = ""
 }
 
-handlePopupAdd.addEventListener('submit', PopupAddSubmit)
+handlePopupAdd.addEventListener('submit', popupAddSubmit)
