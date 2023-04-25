@@ -80,8 +80,12 @@ const renderElement = (element) => {
     elements.prepend(element)
 }
 
+const renderElementAdd = (element) => {
+    elements.append(element)
+}
+
 initialCards.forEach(element => {
-    renderElement(createElement(element))
+    renderElementAdd(createElement(element))
 })
 
 

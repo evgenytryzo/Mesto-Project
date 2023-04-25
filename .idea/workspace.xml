@@ -5,17 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="effc6121-f9f1-448f-a572-29e3f21c615a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/blocks/popup/__container/_type/_add/popup__container_type_add.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/popup/__container/_type/_edit/popup_container_type_edit.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/popup/__container/_type/_image/popup_container_type_image.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/element/__delete/element_delete.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/element/__delete/element__delete.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/popup/__container/popup__container.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/__container/popup__container.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/popup/__image-container/popup__image-container.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/popup/__image-name/popup__image-name.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/__image-name/popup__image-name.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +98,10 @@
       <workItem from="1681927862451" duration="7996000" />
       <workItem from="1681985955304" duration="599000" />
       <workItem from="1682069863113" duration="599000" />
-      <workItem from="1682366834599" duration="3547000" />
+      <workItem from="1682366834599" duration="3666000" />
+      <workItem from="1682425253723" duration="41000" />
+      <workItem from="1682425304936" duration="644000" />
+      <workItem from="1682442839547" duration="1964000" />
     </task>
     <servers />
   </component>
