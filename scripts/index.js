@@ -25,13 +25,13 @@ function openPopup(popupElement) {
 function closePopup(popupElement) {
     popupElement.classList.remove('popup_opened')
 }
+
 closePopupImage.addEventListener('click', () => {
     closePopup(handlePopupImage)
 })
 
 const elements = document.querySelector('.elements')
 const elementsTemplate = document.querySelector('.elements-template')
-
 
 const createElement = (elementData) => {
     const element = elementsTemplate.content
@@ -75,7 +75,6 @@ const createElement = (elementData) => {
     return element
 }
 
-
 const renderElement = (element) => {
     elements.prepend(element)
 }
@@ -87,7 +86,6 @@ const renderElementAdd = (element) => {
 initialCards.forEach(element => {
     renderElementAdd(createElement(element))
 })
-
 
 editButtonLink.addEventListener('click', () => {
     openPopup(moreInfoPopup);
@@ -107,8 +105,6 @@ moreInfoPopupForm.addEventListener('submit', (event) => {
     closePopup();
 })
 
-
-
 buttonAdd.addEventListener('click', () => {
     openPopup(popupAdd);
 })
@@ -117,14 +113,10 @@ closePopupSubmit.addEventListener('click', () => {
     closePopup(popupAdd)
 })
 
-
-
 const popupAddClose = popupAdd.querySelector('.popup__close')
 
 popupAddClose.addEventListener('click', () => {
     closePopup(popupAdd)
-
-
 })
 
 const popupAddSubmit = (event) => {
