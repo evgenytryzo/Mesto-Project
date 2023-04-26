@@ -45,11 +45,6 @@ const createElement = (elementData) => {
     elementPhoto.src = elementData.link;
     elementPhoto.alt = elementData.name;
 
-
-    elementName.textContent = elementData.name;
-    elementPhoto.src = elementData.link;
-    elementPhoto.alt = elementData.name;
-
     elementPhoto.addEventListener('click', () => {
         openPopup(handlePopupImage);
         popupImage.src = elementData.link;
@@ -102,7 +97,7 @@ moreInfoPopupForm.addEventListener('submit', (event) => {
     event.preventDefault();
     profileName.textContent = nameInput.value;
     profileDetail.textContent = detailInput.value;
-    closePopup();
+    closePopup(moreInfoPopup);
 })
 
 buttonAdd.addEventListener('click', () => {
@@ -110,10 +105,10 @@ buttonAdd.addEventListener('click', () => {
 })
 
 closePopupSubmit.addEventListener('click', () => {
-    closePopup(popupAdd)
+    closePopup(popupAdd);
 })
 
-const popupAddClose = popupAdd.querySelector('.popup__close')
+const popupAddClose = popupAdd.querySelector('.popup__close');
 
 popupAddClose.addEventListener('click', () => {
     closePopup(popupAdd)
@@ -122,13 +117,11 @@ popupAddClose.addEventListener('click', () => {
 const popupAddSubmit = (event) => {
     event.preventDefault();
 
-    const nameInput = handlePopupAdd.querySelector('.popup__input_type_name')
-    const linkInput = handlePopupAdd.querySelector('.popup__input_type_link')
+    const nameInput = handlePopupAdd.querySelector('.popup__input_type_name');
+    const linkInput = handlePopupAdd.querySelector('.popup__input_type_link');
 
     const name = nameInput.value;
     const link = linkInput.value;
-
-    console.log(name, link)
 
     const elementData = {
         name,
