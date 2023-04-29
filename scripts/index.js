@@ -11,7 +11,7 @@ const buttonAdd = document.querySelector('.profile__add-button');
 const popupAdd = document.querySelector('.popup_add');
 
 const handlePopupAdd = document.querySelector('.popup__form_add');
-const closePopupSubmit = popupAdd.querySelector('.popup__submit');
+const closePopupSubmit = popupAdd.querySelector('.popup__submit-btn');
 
 const handlePopupImage = document.querySelector('.popup_image');
 const closePopupImage = handlePopupImage.querySelector('.popup__close');
@@ -105,6 +105,7 @@ buttonAdd.addEventListener('click', () => {
 })
 
 closePopupSubmit.addEventListener('click', () => {
+    console.log(123)
     closePopup(popupAdd);
 })
 
