@@ -1,10 +1,14 @@
 function checkInputValidity(input) {
-    console.log(input.checkValidity())
+    const errElement = document.querySelector(`#err-${input.id}`)
 
     if (input.checkValidity()) {
-
+        input.classList.remove('popup__input_invalidate')
+        errElement.textContent = '';
     } else {
+        input.classList.add('popup__input_invalidate')
 
+        errElement.textContent = input.validationMessage;
+        console.log(errElement)
     }
 }
 

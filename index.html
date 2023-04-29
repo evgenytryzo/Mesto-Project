@@ -69,9 +69,13 @@
 
         <form name="profile-name" class="popup__form" novalidate>
 
-            <input class="popup__input popup__input_type_name" name="name">
+            <input required id="name" autocomplete="off" minlength="4" class="popup__input popup__input_type_name" name="name">
 
-            <input class="popup__input popup__input_type_detail" name="detail">
+            <span id="err-name" class="popup__error"></span>
+
+            <input required id="detail" autocomplete="off" minlength="4" class="popup__input popup__input_type_detail" name="detail">
+
+            <span id="err-detail" class="popup__error">Blya</span>
 
             <button type="submit" class="popup__submit">Сохранить</button>
         </form>
@@ -90,9 +94,13 @@
 
         <form name="profile-name" class="popup__form popup__form_add" novalidate>
 
-            <input class="popup__input popup__input_type_name" name="name" placeholder="Название">
+            <input required minlength="4" autocomplete="off" id="name-image" class="popup__input popup__input_type_name" name="name" placeholder="Название">
 
-            <input class="popup__input popup__input_type_link" name="link" placeholder="Ссылка на картинку">
+            <span id="err-name-image" class="popup__error">Blya</span>
+
+            <input required minlength="4" id="link" class="popup__input popup__input_type_link" name="link" placeholder="Ссылка на картинку">
+
+            <span id="err-link" class="popup__error">Blya</span>
 
             <button type="submit" class="popup__submit">Создать</button>
         </form>
