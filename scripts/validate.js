@@ -1,12 +1,3 @@
-const validationConfig = {
-    formSelector: ".popup__form",
-    inputSelector: ".popup__input",
-    submitButtonSelector: ".popup__submit-btn",
-    inactiveButtonClass: "popup__submit-btn_disabled",
-    inputErrorClass: "popup__input_type_error",
-    errorClass: "popup__error_visible",
-};
-
 const setInputValidState = (input, errElement) => {
     input.classList.add('popup__input_type_error')
     errElement.classList.add('popup__error_visible')
@@ -21,7 +12,7 @@ const setInputInvalidState = (input, errElement) => {
 }
 
 function checkInputValidity(input) {
-    console.log('th')
+
     const errElement = document.querySelector(`#err-${input.id}`)
 
     if (input.checkValidity()) {
@@ -81,5 +72,11 @@ function enableValidation() {
 
 }
 
-
-enableValidation()
+enableValidation({
+    formSelector: '.popup__form',
+    inputSelector: '.popup__input',
+    submitButtonSelector: '.popup__button',
+    inactiveButtonClass: 'popup__button_disabled',
+    inputErrorClass: 'popup__input_type_error',
+    errorClass: 'popup__error_visible'
+});
