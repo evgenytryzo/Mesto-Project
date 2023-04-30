@@ -54,42 +54,23 @@ const forms = () => {
     const formsArr = Array.from(forms)
 
     formsArr.forEach((input) => {
-
         enableValidation(input)
         toggleButtonValidity(input)
     })
 }
-
 
 function enableValidation(form) {
 
     const inputsEdit = document.querySelectorAll('.popup__input');
     const inputsArrayEdit = Array.from(inputsEdit);
 
-    const checkValidityButtonEdd = document.querySelector('.profile__edit-button');
-    const checkValidityButtonAdd = document.querySelector('.profile__add-button')
-
     inputsArrayEdit.forEach((input) => {
         input.addEventListener('input', () => {
             checkInputValidity(input);
             toggleButtonValidity(form);
-
-            checkValidityButtonEdd.addEventListener('click', () => {
-                toggleButtonValidity(form);
-                checkInputValidity(input);
-            })
-
-            checkValidityButtonAdd.addEventListener('click', () => {
-                const errElement = document.querySelector(`#err-${input.id}`)
-                setInputInvalidState(input, errElement)
-            })
-
         })
-
     })
-
     setSubmitListener(form)
-
 }
 
 forms()

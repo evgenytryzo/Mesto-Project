@@ -18,8 +18,16 @@ const closePopupImage = handlePopupImage.querySelector('.popup__close');
 const popupImage = handlePopupImage.querySelector('.popup__image');
 const popupName = handlePopupImage.querySelector('.popup__image-name');
 
+const inputsProfileForm = Array.from(
+    document.querySelectorAll(".popup__input")
+);
+
 function openPopup(popupElement) {
     popupElement.classList.add('popup_opened');
+    inputsProfileForm.forEach((input) => {
+        const errElement = document.querySelector(`#err-${input.id}`)
+        setInputInvalidState(input, errElement)
+    })
 }
 
 function removePopupAdd() {
@@ -93,6 +101,7 @@ editButtonLink.addEventListener('click', () => {
     openPopup(moreInfoPopup);
     nameInput.value = profileName.textContent;
     detailInput.value = profileDetail.textContent;
+    forms()
 })
 
 moreInfoPopupClose.addEventListener('click', () => {
