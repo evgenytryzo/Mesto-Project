@@ -51,32 +51,35 @@ const setSubmitListener = (formEdit) => {
 }
 
 function enableValidation() {
-    const formEdit = document.querySelector('.popup__form_edit');
-    console.log(formEdit)
-    setSubmitListener(formEdit);
+    const form = document.querySelector('.popup__form_edit');
+    setSubmitListener(form);
 
     const inputsEdit = document.querySelectorAll('.popup__input');
     const inputsArrayEdit = Array.from(inputsEdit);
+
     const checkValidityButton = document.querySelector('.profile__edit-button');
 
     inputsArrayEdit.forEach((input) => {
         input.addEventListener('input', () => {
             checkInputValidity(input)
-            toggleButtonValidity(formEdit)
+            toggleButtonValidity(form)
             checkValidityButton.addEventListener('click', () => {
-                toggleButtonValidity(formEdit)
+                toggleButtonValidity(form)
                 checkInputValidity(input)
             })
         })
     })
 
+
+
+
 }
 
 enableValidation({
-    formSelector: '.popup__form',
-    inputSelector: '.popup__input',
-    submitButtonSelector: '.popup__button',
-    inactiveButtonClass: 'popup__button_disabled',
-    inputErrorClass: 'popup__input_type_error',
-    errorClass: 'popup__error_visible'
+    formSelector: ".popup__form",
+    inputSelector: ".popup__input",
+    submitButtonSelector: ".popup__submit-btn",
+    inactiveButtonClass: "popup__submit-btn_disabled",
+    inputErrorClass: "popup__input_type_error",
+    errorClass: "popup__error_visible",
 });

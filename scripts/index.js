@@ -22,6 +22,13 @@ function openPopup(popupElement) {
     popupElement.classList.add('popup_opened');
 }
 
+function removePopupAdd() {
+    const inputName = handlePopupAdd.querySelector('.popup__input_type_name')
+    const inputLink = handlePopupAdd.querySelector('.popup__input_type_link')
+    inputName.value = ""
+    inputLink.value = ""
+}
+
 function closePopup(popupElement) {
     popupElement.classList.remove('popup_opened')
 }
@@ -102,17 +109,19 @@ moreInfoPopupForm.addEventListener('submit', (event) => {
 
 buttonAdd.addEventListener('click', () => {
     openPopup(popupAdd);
+    removePopupAdd()
 })
 
 closePopupSubmit.addEventListener('click', () => {
-    console.log(123)
     closePopup(popupAdd);
+
 })
 
 const popupAddClose = popupAdd.querySelector('.popup__close');
 
 popupAddClose.addEventListener('click', () => {
     closePopup(popupAdd)
+
 })
 
 const popupAddSubmit = (event) => {
@@ -128,10 +137,9 @@ const popupAddSubmit = (event) => {
         name,
         link,
     }
+
     renderElement(createElement((elementData)))
 
-    nameInput.value = ""
-    linkInput.value = ""
 }
 
 handlePopupAdd.addEventListener('submit', popupAddSubmit)
