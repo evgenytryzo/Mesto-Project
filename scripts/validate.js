@@ -7,7 +7,6 @@ const config = {
     errorClass: "popup__error_visible",
 };
 
-
 const setInputValidState = (input, errElement, config) => {
     input.classList.add(config.inputErrorClass)
     errElement.classList.add(config.errorClass)
@@ -58,16 +57,6 @@ const setSubmitListener = (form, config) => {
         toggleButtonValidity(form, config)
     });
 }
-
-// const forms = () => {
-//     const forms = document.querySelectorAll('.popup__form')
-//     const formsArr = Array.from(forms)
-//
-//     formsArr.forEach((input) => {
-//         enableValidation(input)
-//         toggleButtonValidity(input)
-//     })
-// }
 
 const checkValidityForm = (config) => {
     const forms = document.querySelectorAll(config.formSelector)
