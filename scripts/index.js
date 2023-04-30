@@ -24,12 +24,14 @@ const forms = document.querySelectorAll('.popup__form')
 const formsArr = Array.from(forms)
 
 function openPopup(popupElement) {
+
     popupElement.classList.add('popup_opened');
 
     inputsProfileForm.forEach((input) => {
         const errElement = document.querySelector(`#err-${input.id}`)
         setInputInvalidState(input, errElement)
     })
+
 }
 
 function removePopupAdd() {
@@ -67,6 +69,8 @@ const createElement = (elementData) => {
         popupImage.src = elementData.link;
         popupImage.alt = elementData.name;
         popupName.textContent = elementData.name;
+
+
     })
 
     const likeElement = element.querySelector('.element__like-button')
@@ -106,8 +110,8 @@ editButtonLink.addEventListener('click', () => {
 
     formsArr.forEach((input) => {
         toggleButtonValidity(input)
-        console.log(input)
     })
+
 })
 
 moreInfoPopupClose.addEventListener('click', () => {
@@ -124,6 +128,11 @@ moreInfoPopupForm.addEventListener('submit', (event) => {
 
 buttonAdd.addEventListener('click', () => {
     openPopup(popupAdd);
+
+    formsArr.forEach((input) => {
+        toggleButtonValidity(input)
+    })
+
     removePopupAdd()
 })
 

@@ -61,18 +61,20 @@ const setSubmitListener = (formEdit) => {
 //     })
 // }
 
-function enableValidation() {
+const checkValidityForm = () => {
     const forms = document.querySelectorAll('.popup__form')
     const formsArr = Array.from(forms)
+    formsArr.forEach((input) => {
+        toggleButtonValidity(input)
+        setSubmitListener(input)
+    })
+}
+
+function enableValidation() {
+
     const inputs = document.querySelectorAll('.popup__input');
     const inputsArray = Array.from(inputs);
 
-    const checkValidityForm = () => {
-        formsArr.forEach((input) => {
-            toggleButtonValidity(input)
-            setSubmitListener(input)
-        })
-    }
     inputsArray.forEach((input) => {
         input.addEventListener('input', () => {
             checkInputValidity(input);
