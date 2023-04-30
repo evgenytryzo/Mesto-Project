@@ -37,8 +37,10 @@ const toggleButtonValidity = (formEdit) => {
     const submitButton = formEdit.querySelector('.popup__submit-btn');
     if (formEdit.checkValidity()) {
         enableButton(submitButton)
+        console.log('try')
     } else {
         disableButton(submitButton)
+        console.log('ne try')
     }
 }
 
@@ -49,28 +51,36 @@ const setSubmitListener = (formEdit) => {
     });
 }
 
-const forms = () => {
+// const forms = () => {
+//     const forms = document.querySelectorAll('.popup__form')
+//     const formsArr = Array.from(forms)
+//
+//     formsArr.forEach((input) => {
+//         enableValidation(input)
+//         toggleButtonValidity(input)
+//     })
+// }
+
+function enableValidation() {
     const forms = document.querySelectorAll('.popup__form')
     const formsArr = Array.from(forms)
+    const inputs = document.querySelectorAll('.popup__input');
+    const inputsArray = Array.from(inputs);
 
-    formsArr.forEach((input) => {
-        enableValidation(input)
-        toggleButtonValidity(input)
-    })
-}
-
-function enableValidation(form) {
-
-    const inputsEdit = document.querySelectorAll('.popup__input');
-    const inputsArrayEdit = Array.from(inputsEdit);
-
-    inputsArrayEdit.forEach((input) => {
+    const checkValidityForm = () => {
+        formsArr.forEach((input) => {
+            toggleButtonValidity(input)
+            setSubmitListener(input)
+        })
+    }
+    inputsArray.forEach((input) => {
         input.addEventListener('input', () => {
             checkInputValidity(input);
-            toggleButtonValidity(form);
+            checkValidityForm()
         })
+        setSubmitListener(input)
     })
-    setSubmitListener(form)
+
 }
 
-forms()
+enableValidation();

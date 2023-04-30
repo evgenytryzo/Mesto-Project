@@ -19,11 +19,13 @@ const popupImage = handlePopupImage.querySelector('.popup__image');
 const popupName = handlePopupImage.querySelector('.popup__image-name');
 
 const inputsProfileForm = Array.from(
-    document.querySelectorAll(".popup__input")
-);
+    document.querySelectorAll(".popup__input"));
+const forms = document.querySelectorAll('.popup__form')
+const formsArr = Array.from(forms)
 
 function openPopup(popupElement) {
     popupElement.classList.add('popup_opened');
+
     inputsProfileForm.forEach((input) => {
         const errElement = document.querySelector(`#err-${input.id}`)
         setInputInvalidState(input, errElement)
@@ -101,7 +103,11 @@ editButtonLink.addEventListener('click', () => {
     openPopup(moreInfoPopup);
     nameInput.value = profileName.textContent;
     detailInput.value = profileDetail.textContent;
-    forms()
+
+    formsArr.forEach((input) => {
+        toggleButtonValidity(input)
+        console.log(input)
+    })
 })
 
 moreInfoPopupClose.addEventListener('click', () => {
