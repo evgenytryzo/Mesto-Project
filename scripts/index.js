@@ -1,6 +1,6 @@
 const editButtonLink = document.querySelector('.profile__edit-button-link');
 const moreInfoPopup = document.querySelector('.popup_edit');
-const moreInfoPopupClose = moreInfoPopup.querySelector('.popup__close');
+
 const nameInput = moreInfoPopup.querySelector('.popup__input_type_name');
 const moreInfoPopupForm = moreInfoPopup.querySelector('.popup__form');
 const profileName = document.querySelector('.profile__name');
@@ -11,18 +11,17 @@ const buttonAdd = document.querySelector('.profile__add-button');
 const popupAdd = document.querySelector('.popup_add');
 
 const handlePopupAdd = document.querySelector('.popup__form_add');
-const closePopupSubmit = popupAdd.querySelector('.popup__submit-btn');
 
 const handlePopupImage = document.querySelector('.popup_image');
-const closePopupImage = handlePopupImage.querySelector('.popup__close');
+
 const popupImage = handlePopupImage.querySelector('.popup__image');
 const popupName = handlePopupImage.querySelector('.popup__image-name');
-
-const page = document.querySelector('.page')
 
 const inputsProfileForm = Array.from(document.querySelectorAll(config.inputSelector));
 const forms = document.querySelectorAll(config.formSelector)
 const formsArr = Array.from(forms)
+
+const popups = document.querySelectorAll(".popup");
 
 function openPopup(popupElement) {
 
@@ -31,9 +30,23 @@ function openPopup(popupElement) {
     inputsProfileForm.forEach((input) => {
         const errElement = document.querySelector(`#err-${input.id}`)
         setInputInvalidState(input, errElement, config)
-
     })
 
+    document.addEventListener('keydown', closePopupEsc)
+}
+
+function closePopup(popupElement) {
+    popupElement.classList.remove('popup_opened')
+
+    document.removeEventListener("keydown", closePopupEsc);
+}
+
+
+const closePopupEsc = (event) => {
+    const popup = document.querySelector('.popup_opened');
+    if (event.key === "Escape") {
+        closePopup(popup);
+    }
 }
 
 function removePopupAdd() {
@@ -43,13 +56,6 @@ function removePopupAdd() {
     inputLink.value = ""
 }
 
-function closePopup(popupElement) {
-    popupElement.classList.remove('popup_opened')
-}
-
-closePopupImage.addEventListener('click', () => {
-    closePopup(handlePopupImage)
-})
 
 const elements = document.querySelector('.elements')
 const elementsTemplate = document.querySelector('.elements-template')
@@ -114,16 +120,12 @@ editButtonLink.addEventListener('click', () => {
 
 })
 
-moreInfoPopupClose.addEventListener('click', () => {
-    closePopup(moreInfoPopup);
-
-})
 
 moreInfoPopupForm.addEventListener('submit', (event) => {
     event.preventDefault();
     profileName.textContent = nameInput.value;
     profileDetail.textContent = detailInput.value;
-    closePopup(moreInfoPopup);
+
 })
 
 buttonAdd.addEventListener('click', () => {
@@ -136,15 +138,11 @@ buttonAdd.addEventListener('click', () => {
     removePopupAdd()
 })
 
-closePopupSubmit.addEventListener('click', () => {
-    closePopup(popupAdd);
-
-})
 
 const popupAddClose = popupAdd.querySelector('.popup__close');
 
 popupAddClose.addEventListener('click', () => {
-    closePopup(popupAdd)
+
 
 })
 
@@ -165,5 +163,15 @@ const popupAddSubmit = (event) => {
     renderElement(createElement((elementData)))
 
 }
+popups.forEach((popup) => {
+    const closeButton = popup.querySelector(".popup__close");
+
+    function closePopupByClickOverlay(evt) {
+        if (evt.target === evt.currentTarget) closePopup(popup);
+    }
+
+    closeButton.addEventListener("click", () => closePopup(popup));
+    popup.addEventListener("click", closePopupByClickOverlay);
+});
 
 handlePopupAdd.addEventListener('submit', popupAddSubmit)
