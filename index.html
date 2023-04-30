@@ -69,11 +69,11 @@
 
         <form name="profile-name" class="popup__form popup__form_edit" novalidate>
 
-            <input required id="name" autocomplete="off" minlength="4" class="popup__input popup__input_type_name" name="name">
+            <input required id="name" autocomplete="off" minlength="2" maxlength="40" class="popup__input popup__input_type_name" name="name">
 
             <span id="err-name" class="popup__error"></span>
 
-            <input required id="detail" autocomplete="off" minlength="4" class="popup__input popup__input_type_detail" name="detail">
+            <input required id="detail" autocomplete="off" minlength="2" maxlength="200"  class="popup__input popup__input_type_detail" name="detail">
 
             <span id="err-detail" class="popup__error"></span>
 
@@ -94,11 +94,11 @@
 
         <form name="profile-name" class="popup__form popup__form_add" novalidate>
 
-            <input required minlength="4" autocomplete="off" id="name-image" class="popup__input popup__input_type_name" name="name" placeholder="Название">
+            <input required minlength="2" maxlength="30" autocomplete="off" id="name-image" class="popup__input popup__input_type_name" name="name" placeholder="Название">
 
             <span id="err-name-image" class="popup__error"></span>
 
-            <input type="url" required minlength="4" id="link" class="popup__input popup__input_type_link" name="link" placeholder="Ссылка на картинку">
+            <input type="url" required id="link" class="popup__input popup__input_type_link" name="link" placeholder="Ссылка на картинку">
 
             <span id="err-link" class="popup__error"></span>
 

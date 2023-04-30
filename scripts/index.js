@@ -18,9 +18,10 @@ const closePopupImage = handlePopupImage.querySelector('.popup__close');
 const popupImage = handlePopupImage.querySelector('.popup__image');
 const popupName = handlePopupImage.querySelector('.popup__image-name');
 
-const inputsProfileForm = Array.from(
-    document.querySelectorAll(".popup__input"));
-const forms = document.querySelectorAll('.popup__form')
+const page = document.querySelector('.page')
+
+const inputsProfileForm = Array.from(document.querySelectorAll(config.inputSelector));
+const forms = document.querySelectorAll(config.formSelector)
 const formsArr = Array.from(forms)
 
 function openPopup(popupElement) {
@@ -29,7 +30,8 @@ function openPopup(popupElement) {
 
     inputsProfileForm.forEach((input) => {
         const errElement = document.querySelector(`#err-${input.id}`)
-        setInputInvalidState(input, errElement)
+        setInputInvalidState(input, errElement, config)
+
     })
 
 }
@@ -69,8 +71,6 @@ const createElement = (elementData) => {
         popupImage.src = elementData.link;
         popupImage.alt = elementData.name;
         popupName.textContent = elementData.name;
-
-
     })
 
     const likeElement = element.querySelector('.element__like-button')
@@ -109,7 +109,7 @@ editButtonLink.addEventListener('click', () => {
     detailInput.value = profileDetail.textContent;
 
     formsArr.forEach((input) => {
-        toggleButtonValidity(input)
+        toggleButtonValidity(input, config)
     })
 
 })
@@ -130,7 +130,7 @@ buttonAdd.addEventListener('click', () => {
     openPopup(popupAdd);
 
     formsArr.forEach((input) => {
-        toggleButtonValidity(input)
+        toggleButtonValidity(input, config)
     })
 
     removePopupAdd()
