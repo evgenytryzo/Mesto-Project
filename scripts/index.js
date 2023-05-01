@@ -1,5 +1,5 @@
 const editButtonLink = document.querySelector('.profile__edit-button-link');
-const moreInfoPopup = document.querySelector('.popup_edit');
+const moreInfoPopup = document.querySelector('.popup_type_edit');
 
 const nameInput = moreInfoPopup.querySelector('.popup__input_type_name');
 const moreInfoPopupForm = moreInfoPopup.querySelector('.popup__form');
@@ -8,26 +8,22 @@ const detailInput = moreInfoPopup.querySelector('.popup__input_type_detail');
 const profileDetail = document.querySelector('.profile__details');
 
 const buttonAdd = document.querySelector('.profile__add-button');
-const popupAdd = document.querySelector('.popup_add');
+const popupAdd = document.querySelector('.popup_type_add');
 
-const handlePopupAdd = document.querySelector('.popup__form_add');
+const popupAddForm = document.querySelector('.popup__form_add');
 
-const handlePopupImage = document.querySelector('.popup_image');
+const popupImage = document.querySelector('.popup_type_image');
 
-const popupImage = handlePopupImage.querySelector('.popup__image');
-const popupName = handlePopupImage.querySelector('.popup__image-name');
+const popupImageContainer = popupImage.querySelector('.popup__image');
+const popupName = popupImage.querySelector('.popup__image-name');
 
-const inputsProfileForm = Array.from(document.querySelectorAll(config.inputSelector));
-const forms = document.querySelectorAll(config.formSelector)
-const formsArr = Array.from(forms)
-
+const inputs = Array.from(document.querySelectorAll(config.inputSelector));
 const popups = document.querySelectorAll(".popup");
 
 function openPopup(popupElement) {
-
     popupElement.classList.add('popup_opened');
 
-    inputsProfileForm.forEach((input) => {
+    inputs.forEach((input) => {
         const errElement = document.querySelector(`#err-${input.id}`)
         setInputInvalidState(input, errElement, config)
     })
@@ -41,21 +37,13 @@ function closePopup(popupElement) {
     document.removeEventListener("keydown", closePopupEsc);
 }
 
-
 const closePopupEsc = (event) => {
     const popup = document.querySelector('.popup_opened');
+
     if (event.key === "Escape") {
         closePopup(popup);
     }
 }
-
-function removePopupAdd() {
-    const inputName = handlePopupAdd.querySelector('.popup__input_type_name')
-    const inputLink = handlePopupAdd.querySelector('.popup__input_type_link')
-    inputName.value = ""
-    inputLink.value = ""
-}
-
 
 const elements = document.querySelector('.elements')
 const elementsTemplate = document.querySelector('.elements-template')
@@ -73,9 +61,9 @@ const createElement = (elementData) => {
     elementPhoto.alt = elementData.name;
 
     elementPhoto.addEventListener('click', () => {
-        openPopup(handlePopupImage);
-        popupImage.src = elementData.link;
-        popupImage.alt = elementData.name;
+        openPopup(popupImage);
+        popupImageContainer.src = elementData.link;
+        popupImageContainer.alt = elementData.name;
         popupName.textContent = elementData.name;
     })
 
@@ -114,43 +102,34 @@ editButtonLink.addEventListener('click', () => {
     nameInput.value = profileName.textContent;
     detailInput.value = profileDetail.textContent;
 
-    formsArr.forEach((input) => {
-        toggleButtonValidity(input, config)
-    })
+    const form = document.querySelector('.popup__form_edit')
+
+    toggleButtonValidity(form, config)
 
 })
-
 
 moreInfoPopupForm.addEventListener('submit', (event) => {
     event.preventDefault();
     profileName.textContent = nameInput.value;
     profileDetail.textContent = detailInput.value;
-
+    closePopup(moreInfoPopup);
 })
 
 buttonAdd.addEventListener('click', () => {
     openPopup(popupAdd);
 
-    formsArr.forEach((input) => {
-        toggleButtonValidity(input, config)
-    })
+    const form = document.querySelector('.popup__form_add')
+    toggleButtonValidity(form, config)
 
-    removePopupAdd()
+    popupAddForm.reset()
 })
 
-
-const popupAddClose = popupAdd.querySelector('.popup__close');
-
-popupAddClose.addEventListener('click', () => {
-
-
-})
 
 const popupAddSubmit = (event) => {
     event.preventDefault();
 
-    const nameInput = handlePopupAdd.querySelector('.popup__input_type_name');
-    const linkInput = handlePopupAdd.querySelector('.popup__input_type_link');
+    const nameInput = popupAddForm.querySelector('.popup__input_type_name');
+    const linkInput = popupAddForm.querySelector('.popup__input_type_link');
 
     const name = nameInput.value;
     const link = linkInput.value;
@@ -162,6 +141,8 @@ const popupAddSubmit = (event) => {
 
     renderElement(createElement((elementData)))
 
+    closePopup(popupAdd)
+
 }
 popups.forEach((popup) => {
     const closeButton = popup.querySelector(".popup__close");
@@ -172,6 +153,7 @@ popups.forEach((popup) => {
 
     closeButton.addEventListener("click", () => closePopup(popup));
     popup.addEventListener("click", closePopupByClickOverlay);
+
 });
 
-handlePopupAdd.addEventListener('submit', popupAddSubmit)
+popupAddForm.addEventListener('submit', popupAddSubmit)

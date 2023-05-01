@@ -12,7 +12,7 @@
     <meta name="author" content="Евгений Кривов">
 
     <link rel="stylesheet" href="pages/index.css">
-    <script src="scripts/arrElements.js" defer></script>
+    <script src="scripts/constants.js" defer></script>
     <script src="scripts/validate.js" defer></script>
     <script src="scripts/index.js" defer></script>
 </head>
@@ -62,8 +62,7 @@
 </div>
 
 
-
-<section class="popup popup_edit">
+<section class="popup popup_type_edit">
 
     <div class="popup__container popup__container_type_edit">
 
@@ -71,11 +70,13 @@
 
         <form name="profile-name" class="popup__form popup__form_edit" novalidate>
 
-            <input required id="name" autocomplete="off" minlength="2" maxlength="40" class="popup__input popup__input_type_name" name="name">
+            <input placeholder="Имя" required id="name" autocomplete="off" minlength="2" maxlength="40"
+                   class="popup__input popup__input_type_name" name="name">
 
             <span id="err-name" class="popup__error"></span>
 
-            <input required id="detail" autocomplete="off" minlength="2" maxlength="200"  class="popup__input popup__input_type_detail" name="detail">
+            <input placeholder="О себе" required id="detail" autocomplete="off" minlength="2" maxlength="200"
+                   class="popup__input popup__input_type_detail" name="detail">
 
             <span id="err-detail" class="popup__error"></span>
 
@@ -88,7 +89,7 @@
 
 </section>
 
-<section class="popup popup_add">
+<section class="popup popup_type_add">
 
     <div class="popup__container popup__container_type_add">
 
@@ -96,11 +97,13 @@
 
         <form name="profile-name" class="popup__form popup__form_add" novalidate>
 
-            <input required minlength="2" maxlength="30" autocomplete="off" id="name-image" class="popup__input popup__input_type_name" name="name" placeholder="Название">
+            <input required minlength="2" maxlength="30" autocomplete="off" id="name-image"
+                   class="popup__input popup__input_type_name" name="name" placeholder="Название">
 
             <span id="err-name-image" class="popup__error"></span>
 
-            <input type="url" required id="link" class="popup__input popup__input_type_link" name="link" placeholder="Ссылка на картинку">
+            <input type="url" required id="link" class="popup__input popup__input_type_link" name="link"
+                   placeholder="Ссылка на картинку">
 
             <span id="err-link" class="popup__error"></span>
 
@@ -113,7 +116,7 @@
 
 </section>
 
-<section class="popup popup_image">
+<section class="popup popup_type_image">
 
     <figure class="popup__container popup__container_type_image">
 

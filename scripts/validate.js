@@ -1,17 +1,7 @@
-const config = {
-    formSelector: ".popup__form",
-    inputSelector: ".popup__input",
-    submitButtonSelector: ".popup__submit-btn",
-    inactiveButtonClass: "popup__submit-btn_disabled",
-    inputErrorClass: "popup__input_type_error",
-    errorClass: "popup__error_visible",
-};
-
 const setInputValidState = (input, errElement, config) => {
     input.classList.add(config.inputErrorClass)
     errElement.classList.add(config.errorClass)
     errElement.textContent = input.validationMessage;
-
 }
 
 const setInputInvalidState = (input, errElement, config) => {
@@ -58,28 +48,27 @@ const setSubmitListener = (form, config) => {
     });
 }
 
-const checkValidityForm = (config) => {
-    const forms = document.querySelectorAll(config.formSelector)
-    const formsArr = Array.from(forms)
-    formsArr.forEach((input) => {
-        toggleButtonValidity(input, config)
-        setSubmitListener(input, config)
+function setEventListeners(form, config) {
+
+    setSubmitListener(form, config);
+    toggleButtonValidity(form, config);
+
+    const inputs = form.querySelectorAll(config.inputSelector);
+
+    inputs.forEach((input) => {
+        input.addEventListener('input', () => {
+            checkInputValidity(input, config);
+            toggleButtonValidity(form, config);
+        })
     })
 }
 
 function enableValidation(config) {
+    const forms = document.querySelectorAll(config.formSelector);
 
-    const inputs = document.querySelectorAll(config.inputSelector);
-    const inputsArray = Array.from(inputs);
-
-    inputsArray.forEach((input) => {
-        input.addEventListener('input', () => {
-            checkInputValidity(input, config);
-            checkValidityForm(config)
-        })
-        setSubmitListener(input, config)
-    })
-
+    forms.forEach((form) => {
+        setEventListeners(form, config);
+    });
 }
 
 enableValidation(config);
