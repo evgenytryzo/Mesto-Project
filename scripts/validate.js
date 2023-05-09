@@ -1,3 +1,5 @@
+import {config} from './constants.js'
+
 const setInputValidState = (input, errElement, config) => {
     input.classList.add(config.inputErrorClass)
     errElement.classList.add(config.errorClass)
@@ -72,3 +74,5 @@ function enableValidation(config) {
 }
 
 enableValidation(config);
+
+export {setInputInvalidState, toggleButtonValidity}

@@ -1,3 +1,6 @@
+import {initialCards, config} from './constants.js'
+import {setInputInvalidState, toggleButtonValidity} from "./validate.js";
+
 const editButtonLink = document.querySelector('.profile__edit-button-link');
 const moreInfoPopup = document.querySelector('.popup_type_edit');
 
