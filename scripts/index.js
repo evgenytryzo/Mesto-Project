@@ -90,7 +90,7 @@ initialCards.forEach(element => {
 })
 
 editButtonLink.addEventListener('click', () => {
-  const formEdit = moreInfoPopupForm.querySelector('.popup__form_edit')
+  const formEdit = document.querySelector('.popup__form_edit')
 
   openPopup(moreInfoPopup)
   nameInput.value = profileName.textContent
