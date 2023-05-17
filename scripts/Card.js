@@ -1,11 +1,10 @@
-import {config} from "./constants";
-
 class Card {
-  #container
-
-  constructor(data, selector) {
+  constructor() {
 
   }
 }
 
-const card = new Card('')
+export default Card
+
+
+//_likeCard _deleteCard _setEventListeners generate

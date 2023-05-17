@@ -2,149 +2,149 @@
 <html lang="ru">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Mesto</title>
+  <title>Mesto</title>
 
-    <meta name="description" content="Учебный проект">
-    <meta name="keywords" content="html, css, javascript">
-    <meta name="author" content="Евгений Кривов">
+  <meta name="description" content="Учебный проект">
+  <meta name="keywords" content="html, css, javascript">
+  <meta name="author" content="Евгений Кривов">
 
-    <link rel="stylesheet" href="pages/index.css">
-    <script src="scripts/validate.js" defer type="module"></script>
-    <script src="scripts/index.js" defer type="module"></script>
+  <link rel="stylesheet" href="pages/index.css">
+  <script src="scripts/validate.js" defer type="module"></script>
+  <script src="scripts/index.js" defer type="module"></script>
 </head>
 
 <body class="body">
 
 <div class="page">
 
-    <header class="header">
+  <header class="header">
 
-        <img class="header__logo" src="images/mesto-logo.svg" alt="Логотип 'Место'">
+    <img class="header__logo" src="images/mesto-logo.svg" alt="Логотип 'Место'">
 
-        <div class="header__line"></div>
+    <div class="header__line"></div>
 
-    </header>
+  </header>
 
-    <main class="content">
+  <main class="content">
 
-        <section class="profile">
+    <section class="profile">
 
-            <img class="profile__avatar" src="images/profile-avatar.png" alt="Аватар профиля">
+      <img class="profile__avatar" src="images/profile-avatar.png" alt="Аватар профиля">
 
-            <div class="profile__info">
+      <div class="profile__info">
 
-                <h1 class="profile__name">Жак-Ив Кусто</h1>
+        <h1 class="profile__name">Жак-Ив Кусто</h1>
 
-                <button type="button" class="profile__edit-button profile__edit-button-link"></button>
+        <button type="button" class="profile__edit-button profile__edit-button-link"></button>
 
-                <p class="profile__details">Исследователь океана</p>
+        <p class="profile__details">Исследователь океана</p>
 
-            </div>
+      </div>
 
-            <button type="button" class="profile__add-button"></button>
+      <button type="button" class="profile__add-button"></button>
 
-        </section>
+    </section>
 
-        <section class="elements">
+    <section class="elements">
 
-        </section>
+    </section>
 
-    </main>
+  </main>
 
-    <footer class="footer">
-        <p class="footer__copyright">© 2020 Mesto Russia</p>
-    </footer>
+  <footer class="footer">
+    <p class="footer__copyright">© 2020 Mesto Russia</p>
+  </footer>
 
 </div>
 
 
 <section class="popup popup_type_edit">
 
-    <div class="popup__container popup__container_type_edit">
+  <div class="popup__container popup__container_type_edit">
 
-        <h2 class="popup__name">Редактировать профиль</h2>
+    <h2 class="popup__name">Редактировать профиль</h2>
 
-        <form name="profile-name" class="popup__form popup__form_edit" novalidate>
+    <form name="profile-name" class="popup__form popup__form_edit" novalidate>
 
-            <input placeholder="Имя" required id="name" autocomplete="off" minlength="2" maxlength="40"
-                   class="popup__input popup__input_type_name" name="name">
+      <input placeholder="Имя" required id="name" autocomplete="off" minlength="2" maxlength="40"
+             class="popup__input popup__input_type_name" name="name">
 
-            <span id="err-name" class="popup__error"></span>
+      <span id="err-name" class="popup__error"></span>
 
-            <input placeholder="О себе" required id="detail" autocomplete="off" minlength="2" maxlength="200"
-                   class="popup__input popup__input_type_detail" name="detail">
+      <input placeholder="О себе" required id="detail" autocomplete="off" minlength="2" maxlength="200"
+             class="popup__input popup__input_type_detail" name="detail">
 
-            <span id="err-detail" class="popup__error"></span>
+      <span id="err-detail" class="popup__error"></span>
 
-            <button type="submit" class="popup__submit-btn">Сохранить</button>
-        </form>
+      <button type="submit" class="popup__submit-btn">Сохранить</button>
+    </form>
 
-        <button type="button" class="popup__close"></button>
+    <button type="button" class="popup__close"></button>
 
-    </div>
+  </div>
 
 </section>
 
 <section class="popup popup_type_add">
 
-    <div class="popup__container popup__container_type_add">
+  <div class="popup__container popup__container_type_add">
 
-        <h2 class="popup__name">Новое место</h2>
+    <h2 class="popup__name">Новое место</h2>
 
-        <form name="profile-name" class="popup__form popup__form_add" novalidate>
+    <form name="profile-name" class="popup__form popup__form_add" novalidate>
 
-            <input required minlength="2" maxlength="30" autocomplete="off" id="name-image"
-                   class="popup__input popup__input_type_name" name="name" placeholder="Название">
+      <input required minlength="2" maxlength="30" autocomplete="off" id="name-image"
+             class="popup__input popup__input_type_name" name="name" placeholder="Название">
 
-            <span id="err-name-image" class="popup__error"></span>
+      <span id="err-name-image" class="popup__error"></span>
 
-            <input type="url" required id="link" class="popup__input popup__input_type_link" name="link"
-                   placeholder="Ссылка на картинку">
+      <input type="url" required id="link" class="popup__input popup__input_type_link" name="link"
+             placeholder="Ссылка на картинку">
 
-            <span id="err-link" class="popup__error"></span>
+      <span id="err-link" class="popup__error"></span>
 
-            <button type="submit" class="popup__submit-btn">Создать</button>
-        </form>
+      <button type="submit" class="popup__submit-btn">Создать</button>
+    </form>
 
-        <button type="button" class="popup__close"></button>
+    <button type="button" class="popup__close"></button>
 
-    </div>
+  </div>
 
 </section>
 
 <section class="popup popup_type_image">
 
-    <figure class="popup__container popup__container_type_image">
+  <figure class="popup__container popup__container_type_image">
 
-        <button type="button" class="popup__close"></button>
+    <button type="button" class="popup__close"></button>
 
-        <img class="popup__image" src="#" alt="">
+    <img class="popup__image" src="#" alt="">
 
-        <figcaption class="popup__image-name">Карачаево-Черкессия</figcaption>
+    <figcaption class="popup__image-name">Карачаево-Черкессия</figcaption>
 
-    </figure>
+  </figure>
 </section>
 
 <template class="elements-template">
 
-    <div class="element">
+  <div class="element">
 
-        <button type="button" class="element__delete"></button>
+    <button type="button" class="element__delete"></button>
 
-        <img class="element__photo" src="images/element-kirill-pershin.jpg" alt="Фотография картины">
+    <img class="element__photo" src="images/element-kirill-pershin.jpg" alt="Фотография картины">
 
-        <div class="element__container">
+    <div class="element__container">
 
-            <h2 class="element__name">Карачаевск</h2>
+      <h2 class="element__name">Карачаевск</h2>
 
-            <button type="button" class="element__like-button"></button>
-
-        </div>
+      <button type="button" class="element__like-button"></button>
 
     </div>
+
+  </div>
 
 </template>
 
