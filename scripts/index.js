@@ -43,50 +43,58 @@ const closePopupEsc = (event) => {
   }
 }
 
-const createElement = (elementData) => {
-  const element = elementsTemplate.content
-  .querySelector( '.element' )
-  .cloneNode( true )
-  const elementName = element.querySelector( '.element__name' )
-  const elementPhoto = element.querySelector( '.element__photo' )
-  const likeElement = element.querySelector( '.element__like-button' )
-  const deleteElement = element.querySelector( '.element__delete' )
-
-  elementName.textContent = elementData.name
-  elementPhoto.src = elementData.link
-  elementPhoto.alt = elementData.name
-
-  elementPhoto.addEventListener( 'click', () => {
-    openPopup( popupImage )
-    popupImageContainer.src = elementData.link
-    popupImageContainer.alt = elementData.name
-    popupName.textContent = elementData.name
-  } )
-
-  const handleLike = () => {
-    likeElement.classList.toggle( 'element__like-button_active' )
-  }
-
-  const handleDelete = () => {
-    element.remove()
-  }
-
-  likeElement.addEventListener( 'click', handleLike )
-  deleteElement.addEventListener( 'click', handleDelete )
-
-  return element
-}
+// const createElement = (elementData) => {
+//   const element = elementsTemplate.content
+//   .querySelector( '.element' )
+//   .cloneNode( true )
+//   const elementName = element.querySelector( '.element__name' )
+//   const elementPhoto = element.querySelector( '.element__photo' )
+//   const likeElement = element.querySelector( '.element__like-button' )
+//   const deleteElement = element.querySelector( '.element__delete' )
+//
+//   elementName.textContent = elementData.name
+//   elementPhoto.src = elementData.link
+//   elementPhoto.alt = elementData.name
+//
+//   elementPhoto.addEventListener( 'click', () => {
+//     openPopup( popupImage )
+//     popupImageContainer.src = elementData.link
+//     popupImageContainer.alt = elementData.name
+//     popupName.textContent = elementData.name
+//   } )
+//
+//   const handleLike = () => {
+//     likeElement.classList.toggle( 'element__like-button_active' )
+//   }
+//
+//   const handleDelete = () => {
+//     element.remove()
+//   }
+//
+//   likeElement.addEventListener( 'click', handleLike )
+//   deleteElement.addEventListener( 'click', handleDelete )
+//
+//   return element
+// }
 
 const renderElement = (element) => {
   elements.prepend( element )
 }
 
+
 const renderElementAdd = (element) => {
   elements.append( element )
 }
 
+const createNewCard = (element, openPopup) => {
+  console.log(element)
+  const card = new Card(element, openPopup);
+  return card.generate();
+}
+
 initialCards.forEach( element => {
-  renderElementAdd( createElement( element ) )
+  renderElementAdd( createNewCard( element, openPopup) )
+  //const renderElementAdd = new Card (element)
 } )
 
 editButtonLink.addEventListener( 'click', () => {
