@@ -1,27 +1,37 @@
-# Проект: Место
+# Mesto Project
 
-## Описание проекта
+## About:
 
-Одностраничный сайт с адаптивной версткой, возможностью открытия и закрытия popup окна и внесения изменений на странице,
-редактирования профиля, дабавление новых карточек на страницу, удаление их.
+This project was created as an educational practice for those who study HTML, 
+CSS and JS. This is a one-page website with adaptive layout. It allows you to open and close
+the popup window, edit the profile, add new cards to the page and delete them.
 
-Страница свёрстана на основе макета `Figma`. Проект был создан с помощью `HTML`, `CSS` и `JS`.
-
+The page is collapsed based on the `Figma` layout. The project was 
+created using `HTML`, `CSS` and `JS'.
 **Figma**
 
-* [Ссылка на макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
+* [Link to Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
 
-**Технологии:**
+## Tools:
 
-+ Flexbox верстка
+
++ JS
 + Grid
 + Figma
-+ Адаптивная вёрстка
-+ БЭМ
-+ JS
-+ Трансформации
-+ Позиционирование элементов
++ Flexbox layout
++ Adaptive layout
++ BEM
 
++ Transformations
++ Positioning of elements
 
-* [Ссылка на GitHub](https://evgenytryzo.github.io/mesto/index.html)
+## Functional: 
+
+- Adaptive layout of the site.
+- Ability to open and close popup windows.
+- Profile editing.
+- Adding new cards to the page.
+- Deleting cards.
+
+* [Link to GitHub](https://evgenytryzo.github.io/mesto/index.html)
 

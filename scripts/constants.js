@@ -23,7 +23,7 @@ const initialCards = [
     name: 'Байкал',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }
-];
+]
 
 const config = {
   formSelector: ".popup__form",
@@ -32,6 +32,6 @@ const config = {
   inactiveButtonClass: "popup__submit-btn_disabled",
   inputErrorClass: "popup__input_type_error",
   errorClass: "popup__error_visible",
-};
+}
 
 export {initialCards, config}

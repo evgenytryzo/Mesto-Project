@@ -1,6 +1,6 @@
 import { initialCards, config } from "./constants.js"
 import Card from "./Card.js"
-import FormValidator from "./FormValidator.js";
+import FormValidator from "./FormValidator.js"
 
 const editButtonLink = document.querySelector('.profile__edit-button-link')
 const moreInfoPopup = document.querySelector('.popup_type_edit')
@@ -15,22 +15,17 @@ const popupAddForm = document.querySelector('.popup__form_add')
 const popups = document.querySelectorAll(".popup")
 const elements = document.querySelector('.elements')
 
-const cardFormValidation = (config, form) => {
-  const validator = new FormValidator(config, form)
-  validator.enableValidation()
+const createNewCard = (element, openPopup) => {
+  const card = new Card(element, openPopup)
+  return card.generate()
 }
 
 const openPopup = (popupElement) => {
+  const errorMassage = new FormValidator(config)
+
   popupElement.classList.add('popup_opened')
   document.addEventListener('keydown', closePopupEsc)
-
-  const errorMassage = new FormValidator(config, popupElement)
   errorMassage.errorMassage()
-}
-
-const closePopup = (popupElement) => {
-  popupElement.classList.remove('popup_opened')
-  document.removeEventListener("keydown", closePopupEsc)
 }
 
 const closePopupEsc = (event) => {
@@ -40,10 +35,20 @@ const closePopupEsc = (event) => {
   }
 }
 
+const closePopup = (popupElement) => {
+  popupElement.classList.remove('popup_opened')
+  document.removeEventListener("keydown", closePopupEsc)
+}
+
 const closePopupByClickOverlay = (evt) => {
   if ( evt.target === evt.currentTarget ) closePopup(evt.currentTarget)
 }
 
+popups.forEach((popup) => {
+  const closeButton = popup.querySelector(".popup__close")
+  closeButton.addEventListener("click", () => closePopup(popup))
+  popup.addEventListener("click", closePopupByClickOverlay)
+})
 
 const renderElement = (element) => {
   elements.prepend(element)
@@ -53,36 +58,24 @@ const renderElementAdd = (element) => {
   elements.append(element)
 }
 
-const createNewCard = (element, openPopup) => {
-  const card = new Card(element, openPopup);
-  return card.generate();
-}
-
 initialCards.forEach(element => {
   renderElementAdd(createNewCard(element, openPopup))
 })
 
 editButtonLink.addEventListener('click', () => {
-  const formEdit = document.querySelector('.popup__form_edit')
-
   openPopup(moreInfoPopup)
   nameInput.value = profileName.textContent
   detailInput.value = profileDetail.textContent
-  cardFormValidation(config, formEdit)
-})
 
-moreInfoPopupForm.addEventListener('submit', (event) => {
-  event.preventDefault()
-  profileName.textContent = nameInput.value
-  profileDetail.textContent = detailInput.value
-  closePopup(moreInfoPopup)
+  const validator = new FormValidator(config)
+  validator.enableValidation()
 })
-
 
 buttonAdd.addEventListener('click', () => {
-  openPopup(popupAdd)
-  cardFormValidation(config, popupAddForm)
   popupAddForm.reset()
+  openPopup(popupAdd)
+  const validator = new FormValidator(config)
+  validator.enableValidation()
 })
 
 const popupAddSubmit = (event) => {
@@ -101,12 +94,11 @@ const popupAddSubmit = (event) => {
   closePopup(popupAdd)
 }
 
-popups.forEach((popup) => {
-  const closeButton = popup.querySelector(".popup__close")
-  closeButton.addEventListener("click", () => closePopup(popup))
-  popup.addEventListener("click", closePopupByClickOverlay)
-
+moreInfoPopupForm.addEventListener('submit', (event) => {
+  event.preventDefault()
+  profileName.textContent = nameInput.value
+  profileDetail.textContent = detailInput.value
+  closePopup(moreInfoPopup)
 })
 
 popupAddForm.addEventListener('submit', popupAddSubmit)
-

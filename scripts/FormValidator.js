@@ -1,4 +1,4 @@
-class FormValidator {
+export default class FormValidator {
   constructor (config) {
     this._formSelector = config.formSelector
     this._submitButtonSelector = config.submitButtonSelector
@@ -10,7 +10,6 @@ class FormValidator {
 
   enableValidation () {
     const forms = document.querySelectorAll(this._formSelector)
-
     forms.forEach((form) => {
       this._setEventListeners(form)
     })
@@ -24,13 +23,13 @@ class FormValidator {
   }
 
   _setEventListeners (form) {
-    this._setSubmitListener(form);
-    this._toggleButtonValidity(form);
+    this._setSubmitListener(form)
+    this._toggleButtonValidity(form)
 
     this.inputs.forEach((input) => {
       input.addEventListener('input', () => {
-        this._checkInputValidity(input);
-        this._toggleButtonValidity(form);
+        this._checkInputValidity(input)
+        this._toggleButtonValidity(form)
       })
     })
   }
@@ -49,11 +48,12 @@ class FormValidator {
     form.addEventListener('submit', (event) => {
       event.preventDefault();
       this._toggleButtonValidity(form)
+      form.reset()
     });
   }
 
   _toggleButtonValidity = (form) => {
-    const submitButton = form.querySelector(this._submitButtonSelector);
+    const submitButton = form.querySelector(this._submitButtonSelector)
     if ( form.checkValidity() ) {
       this._enableButton(submitButton)
     } else {
@@ -83,5 +83,3 @@ class FormValidator {
     button.classList.remove(this._inactiveButtonClass)
   }
 }
-
-export default FormValidator
