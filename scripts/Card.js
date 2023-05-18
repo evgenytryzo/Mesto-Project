@@ -18,7 +18,6 @@ class Card {
   }
 
   generate() {
-    console.log(this._card)
     this.elementName.textContent = this.name
     this.elementPhoto.src = this.element.link
     this.elementPhoto.alt = this.element.name

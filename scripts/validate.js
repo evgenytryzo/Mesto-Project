@@ -13,7 +13,6 @@ const setInputInvalidState = (input, errElement, config) => {
 }
 
 function checkInputValidity(input, config) {
-
   const errElement = document.querySelector( `#err-${ input.id }` )
 
   if ( input.checkValidity() ) {
@@ -36,6 +35,7 @@ const enableButton = (button, config) => {
 
 const toggleButtonValidity = (form, config) => {
   const submitButton = form.querySelector( config.submitButtonSelector );
+
   if ( form.checkValidity() ) {
     enableButton( submitButton, config )
   } else {
@@ -51,7 +51,6 @@ const setSubmitListener = (form, config) => {
 }
 
 function setEventListeners(form, config) {
-
   setSubmitListener( form, config );
   toggleButtonValidity( form, config );
 
@@ -74,5 +73,3 @@ function enableValidation(config) {
 }
 
 enableValidation( config );
-
-export { setInputInvalidState, toggleButtonValidity }
