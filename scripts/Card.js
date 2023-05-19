@@ -1,45 +1,44 @@
 export default class Card {
   constructor (element, openPopup) {
-    this.openPopup = openPopup
-    this.element = element
-    this.name = element.name
-    this.elementsTemplate = document.querySelector('.elements-template')
-    this._card = this.elementsTemplate.content
+    this._openPopup = openPopup
+    this._element = element
+    this._elementsTemplate = document.querySelector('.elements-template')
+    this._card = this._elementsTemplate.content
     .querySelector('.element')
     .cloneNode(true)
-    this.elementName = this._card.querySelector('.element__name')
-    this.elementPhoto = this._card.querySelector('.element__photo')
-    this.likeElement = this._card.querySelector('.element__like-button')
-    this.deleteElement = this._card.querySelector('.element__delete')
-    this.popupImage = document.querySelector('.popup_type_image')
-    this.popupImageContainer = this.popupImage.querySelector('.popup__image')
-    this.popupName = this.popupImage.querySelector('.popup__image-name')
+    this._elementName = this._card.querySelector('.element__name')
+    this._elementPhoto = this._card.querySelector('.element__photo')
+    this._likeElement = this._card.querySelector('.element__like-button')
+    this._deleteElement = this._card.querySelector('.element__delete')
+    this._popupImage = document.querySelector('.popup_type_image')
+    this._popupImageContainer = this._popupImage.querySelector('.popup__image')
+    this._popupName = this._popupImage.querySelector('.popup__image-name')
   }
 
   generate () {
-    this.elementName.textContent = this.name
-    this.elementPhoto.src = this.element.link
-    this.elementPhoto.alt = this.element.name
-    this.setEventListeners()
+    this._elementName.textContent = this._element.name
+    this._elementPhoto.src = this._element.link
+    this._elementPhoto.alt = this._element.name
+    this._setEventListeners()
     return this._card
   }
 
-  setEventListeners () {
-    this.elementPhoto.addEventListener('click', () => {
-      this.openPopup(this.popupImage)
-      this.popupImageContainer.src = this.element.link
-      this.popupImageContainer.alt = this.element.name
-      this.popupName.textContent = this.element.name
+  _setEventListeners () {
+    this._elementPhoto.addEventListener('click', () => {
+      this._openPopup(this._popupImage)
+      this._popupImageContainer.src = this._element.link
+      this._popupImageContainer.alt = this._element.name
+      this._popupName.textContent = this._element.name
     })
-    this.likeElement.addEventListener('click', () => this.handleLike())
-    this.deleteElement.addEventListener('click', () => this.handleDelete())
+    this._likeElement.addEventListener('click', () => this._handleLike())
+    this._deleteElement.addEventListener('click', () => this._handleDelete())
   }
 
-  handleLike () {
-    this.likeElement.classList.toggle('element__like-button_active')
+  _handleLike () {
+    this._likeElement.classList.toggle('element__like-button_active')
   }
 
-  handleDelete () {
+  _handleDelete () {
     this._card.remove()
   }
 }

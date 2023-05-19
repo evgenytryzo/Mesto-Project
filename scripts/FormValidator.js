@@ -5,7 +5,7 @@ export default class FormValidator {
     this._inactiveButtonClass = config.inactiveButtonClass
     this._inputErrorClass = config.inputErrorClass
     this._errorClass = config.errorClass
-    this.inputs = Array.from(document.querySelectorAll(".popup__input"))
+    this._inputs = Array.from(document.querySelectorAll(".popup__input"))
   }
 
   enableValidation () {
@@ -16,7 +16,7 @@ export default class FormValidator {
   }
 
   errorMassage () {
-    this.inputs.forEach((input) => {
+    this._inputs.forEach((input) => {
       const errElement = document.querySelector(`#err-${ input.id }`)
       this._setInputInvalidState(input, errElement)
     })
@@ -26,7 +26,7 @@ export default class FormValidator {
     this._setSubmitListener(form)
     this._toggleButtonValidity(form)
 
-    this.inputs.forEach((input) => {
+    this._inputs.forEach((input) => {
       input.addEventListener('input', () => {
         this._checkInputValidity(input)
         this._toggleButtonValidity(form)
