@@ -5,7 +5,8 @@ export default class FormValidator {
     this._inactiveButtonClass = config.inactiveButtonClass
     this._inputErrorClass = config.inputErrorClass
     this._errorClass = config.errorClass
-    this._inputs = Array.from(document.querySelectorAll(".popup__input"))
+    this._inputSelector = document.querySelectorAll(config.inputSelector)
+    this._inputs = Array.from(this._inputSelector)
   }
 
   enableValidation () {

@@ -20,12 +20,12 @@ const createNewCard = (element, openPopup) => {
   return card.generate()
 }
 
-const openPopup = (popupElement) => {
-  const errorMassage = new FormValidator(config)
+const CardValidator = new FormValidator(config)
 
+const openPopup = (popupElement) => {
   popupElement.classList.add('popup_opened')
   document.addEventListener('keydown', closePopupEsc)
-  errorMassage.errorMassage()
+  CardValidator.errorMassage()
 }
 
 const closePopupEsc = (event) => {
@@ -67,15 +67,14 @@ editButtonLink.addEventListener('click', () => {
   nameInput.value = profileName.textContent
   detailInput.value = profileDetail.textContent
 
-  const validator = new FormValidator(config)
-  validator.enableValidation()
+  CardValidator.enableValidation()
 })
 
 buttonAdd.addEventListener('click', () => {
   popupAddForm.reset()
   openPopup(popupAdd)
-  const validator = new FormValidator(config)
-  validator.enableValidation()
+
+  CardValidator.enableValidation()
 })
 
 const popupAddSubmit = (event) => {
