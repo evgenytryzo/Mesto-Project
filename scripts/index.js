@@ -74,7 +74,6 @@ editButtonLink.addEventListener('click', () => {
   openPopup(moreInfoPopup)
   nameInputEdd.value = profileName.textContent
   detailInput.value = profileDetail.textContent
-
   CardValidator(config, popupEddForm)
 })
 

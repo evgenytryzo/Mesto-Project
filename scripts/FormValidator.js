@@ -1,7 +1,6 @@
 export default class FormValidator {
   constructor (config, form) {
     this._form = form
-    this._formSelector = config.formSelector
     this._submitButtonSelector = config.submitButtonSelector
     this._inactiveButtonClass = config.inactiveButtonClass
     this._inputErrorClass = config.inputErrorClass
@@ -11,22 +10,25 @@ export default class FormValidator {
   }
 
   enableValidation () {
-    console.log(this._form)
     this._setEventListeners(this._form)
-
   }
 
-  _errorMassage () {
-    this._inputs.forEach((input) => {
-      const errElement = document.querySelector(`#err-${ input.id }`)
-      this._setInputInvalidState(input, errElement)
+  _resetValidation (form) {
+    this._toggleButtonValidity(form)
+
+    this._inputs.forEach((inputElement) => {
+      this._errorMassage(inputElement)
     })
+  }
+
+  _errorMassage (input) {
+    const errElement = document.querySelector(`#err-${ input.id }`)
+    this._setInputInvalidState(input, errElement)
   }
 
   _setEventListeners (form) {
     this._setSubmitListener(form)
-    this._toggleButtonValidity(form)
-    this._errorMassage()
+    this._resetValidation(form)
     this._inputs.forEach((input) => {
       input.addEventListener('input', () => {
         this._checkInputValidity(input)
@@ -49,7 +51,6 @@ export default class FormValidator {
     form.addEventListener('submit', (event) => {
       event.preventDefault();
       this._toggleButtonValidity(form)
-      form.reset()
     });
   }
 
