@@ -1,5 +1,6 @@
 export default class FormValidator {
-  constructor (config) {
+  constructor (config, form) {
+    this._form = form
     this._formSelector = config.formSelector
     this._submitButtonSelector = config.submitButtonSelector
     this._inactiveButtonClass = config.inactiveButtonClass
@@ -10,13 +11,12 @@ export default class FormValidator {
   }
 
   enableValidation () {
-    const forms = document.querySelectorAll(this._formSelector)
-    forms.forEach((form) => {
-      this._setEventListeners(form)
-    })
+    console.log(this._form)
+    this._setEventListeners(this._form)
+
   }
 
-  errorMassage () {
+  _errorMassage () {
     this._inputs.forEach((input) => {
       const errElement = document.querySelector(`#err-${ input.id }`)
       this._setInputInvalidState(input, errElement)
@@ -26,7 +26,7 @@ export default class FormValidator {
   _setEventListeners (form) {
     this._setSubmitListener(form)
     this._toggleButtonValidity(form)
-
+    this._errorMassage()
     this._inputs.forEach((input) => {
       input.addEventListener('input', () => {
         this._checkInputValidity(input)

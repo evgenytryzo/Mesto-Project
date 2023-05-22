@@ -1,9 +1,8 @@
 export default class Card {
-  constructor (element, openPopup) {
+  constructor (element, openPopup, template) {
     this._openPopup = openPopup
     this._element = element
-    this._elementsTemplate = document.querySelector('.elements-template')
-    this._card = this._elementsTemplate.content
+    this._card = template.content
     .querySelector('.element')
     .cloneNode(true)
     this._elementName = this._card.querySelector('.element__name')
@@ -24,14 +23,16 @@ export default class Card {
   }
 
   _setEventListeners () {
-    this._elementPhoto.addEventListener('click', () => {
-      this._openPopup(this._popupImage)
-      this._popupImageContainer.src = this._element.link
-      this._popupImageContainer.alt = this._element.name
-      this._popupName.textContent = this._element.name
-    })
+    this._elementPhoto.addEventListener('click', () => this._handleImageClick())
     this._likeElement.addEventListener('click', () => this._handleLike())
     this._deleteElement.addEventListener('click', () => this._handleDelete())
+  }
+
+  _handleImageClick () {
+    this._openPopup(this._popupImage)
+    this._popupImageContainer.src = this._element.link
+    this._popupImageContainer.alt = this._element.name
+    this._popupName.textContent = this._element.name
   }
 
   _handleLike () {
