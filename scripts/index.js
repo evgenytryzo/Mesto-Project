@@ -14,7 +14,6 @@ const popupEddForm = document.querySelector('.popup__form_edit')
 const popups = document.querySelectorAll(".popup")
 const elements = document.querySelector('.elements')
 const elementTemplate = document.querySelector('.elements-template')
-
 const nameInputAdd = popupAddForm.querySelector('.popup__input_type_name')
 const linkInputAdd = popupAddForm.querySelector('.popup__input_type_link')
 const nameInputEdd = popupEddForm.querySelector('.popup__input_type_name')
