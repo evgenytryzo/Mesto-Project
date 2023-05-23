@@ -7,6 +7,7 @@ export default class FormValidator {
     this._errorClass = config.errorClass
     this._inputSelector = document.querySelectorAll(config.inputSelector)
     this._inputs = Array.from(this._inputSelector)
+    this._submitButton = form.querySelector(this._submitButtonSelector)
   }
 
   enableValidation () {
@@ -55,11 +56,10 @@ export default class FormValidator {
   }
 
   _toggleButtonValidity = (form) => {
-    const submitButton = form.querySelector(this._submitButtonSelector)
     if ( form.checkValidity() ) {
-      this._enableButton(submitButton)
+      this._enableButton(this._submitButton)
     } else {
-      this._disableButton(submitButton)
+      this._disableButton(this._submitButton)
     }
   }
 
