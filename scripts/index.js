@@ -25,7 +25,10 @@ const createNewCard = (element, openPopup, template) => {
 }
 
 const cardFormValidator = new FormValidator(config, popupAddForm)
+cardFormValidator.enableValidation()
+
 const profileFormValidator = new FormValidator(config, popupEddForm)
+profileFormValidator.enableValidation()
 
 const openPopup = (popupElement) => {
   popupElement.classList.add('popup_opened')
@@ -70,13 +73,13 @@ editButtonLink.addEventListener('click', () => {
   openPopup(moreInfoPopup)
   nameInputEdd.value = profileName.textContent
   detailInput.value = profileDetail.textContent
-  profileFormValidator.enableValidation()
+  profileFormValidator.resetValidation(popupEddForm)
 })
 
 buttonAdd.addEventListener('click', () => {
   popupAddForm.reset()
   openPopup(popupAdd)
-  cardFormValidator.enableValidation()
+  cardFormValidator.resetValidation(popupAddForm)
 })
 
 const popupAddSubmit = (event) => {

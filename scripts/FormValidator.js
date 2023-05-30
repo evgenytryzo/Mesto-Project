@@ -14,7 +14,7 @@ export default class FormValidator {
     this._setEventListeners(this._form)
   }
 
-  _resetValidation (form) {
+  resetValidation (form) {
     this._toggleButtonValidity(form)
 
     this._inputs.forEach((inputElement) => {
@@ -29,7 +29,7 @@ export default class FormValidator {
 
   _setEventListeners (form) {
     this._setSubmitListener(form)
-    this._resetValidation(form)
+    this.resetValidation(form)
     this._inputs.forEach((input) => {
       input.addEventListener('input', () => {
         this._checkInputValidity(input)
