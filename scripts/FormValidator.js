@@ -5,13 +5,14 @@ export default class FormValidator {
     this._inactiveButtonClass = config.inactiveButtonClass
     this._inputErrorClass = config.inputErrorClass
     this._errorClass = config.errorClass
-    this._inputSelector = document.querySelectorAll(config.inputSelector)
+    this._inputSelector = this._form.querySelectorAll(config.inputSelector)
     this._inputs = Array.from(this._inputSelector)
     this._submitButton = form.querySelector(this._submitButtonSelector)
   }
 
   enableValidation () {
     this._setEventListeners(this._form)
+    this.resetValidation(this._form)
   }
 
   resetValidation (form) {
@@ -29,7 +30,6 @@ export default class FormValidator {
 
   _setEventListeners (form) {
     this._setSubmitListener(form)
-    this.resetValidation(form)
     this._inputs.forEach((input) => {
       input.addEventListener('input', () => {
         this._checkInputValidity(input)
