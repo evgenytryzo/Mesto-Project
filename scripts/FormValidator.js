@@ -7,12 +7,11 @@ export default class FormValidator {
     this._errorClass = config.errorClass
     this._inputSelector = this._form.querySelectorAll(config.inputSelector)
     this._inputs = Array.from(this._inputSelector)
-    this._submitButton = form.querySelector(this._submitButtonSelector)
+    this._submitButton = this._form.querySelector(this._submitButtonSelector)
   }
 
   enableValidation () {
     this._setEventListeners(this._form)
-    this.resetValidation(this._form)
   }
 
   resetValidation (form) {
