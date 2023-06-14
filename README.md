@@ -14,7 +14,7 @@ created using `HTML`, `CSS` and `JS'.
 
 ## Tools:
 
-+ WebPack
++ Webpack
 + JS
 + Grid
 + Figma
