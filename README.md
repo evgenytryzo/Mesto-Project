@@ -21,7 +21,6 @@ created using `HTML`, `CSS` and `JS'.
 + Flexbox layout
 + Adaptive layout
 + BEM
-+ Transformations
 + Positioning of elements
 
 ## Functional: 
