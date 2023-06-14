@@ -5,8 +5,8 @@
     position: absolute;
     right: 20px;
     top: 20px;
-    background-image: url("../../../images/delete.svg");
-    outline: none; /* Для синий ободки */
+    background-image: url(../../../images/delete.svg);
+    outline: none;
     border: 0;
     background-color: rgba(0, 0 ,0 , 0);
     background-size: cover;
