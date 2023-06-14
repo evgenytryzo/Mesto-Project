@@ -14,14 +14,13 @@ created using `HTML`, `CSS` and `JS'.
 
 ## Tools:
 
-+ WebPack
++ Webpack
 + JS
 + Grid
 + Figma
 + Flexbox layout
 + Adaptive layout
 + BEM
-+ Transformations
 + Positioning of elements
 
 ## Functional: 
