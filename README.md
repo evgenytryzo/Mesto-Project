@@ -14,14 +14,13 @@ created using `HTML`, `CSS` and `JS'.
 
 ## Tools:
 
-
++ WebPack
 + JS
 + Grid
 + Figma
 + Flexbox layout
 + Adaptive layout
 + BEM
-
 + Transformations
 + Positioning of elements
 
@@ -33,5 +32,5 @@ created using `HTML`, `CSS` and `JS'.
 - Adding new cards to the page.
 - Deleting cards.
 
-* [Link to GitHub](https://evgenytryzo.github.io/mesto/index.html)
+* [Link to GitHub](https://evgenytryzo.github.io/Mesto-Project/src/index.html)
 
