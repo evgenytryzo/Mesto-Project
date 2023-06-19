@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="effc6121-f9f1-448f-a572-29e3f21c615a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/babel.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/postcss.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/element/__container/element__container.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/element/__container/element__container.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
-    </list>
+    <list default="true" id="effc6121-f9f1-448f-a572-29e3f21c615a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,7 +37,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "WebPack",
+    "git-widget-placeholder": "Additional__classes",
     "javascript.nodejs.core.library.configured.version": "18.7.0",
     "javascript.nodejs.core.library.typings.version": "18.7.0",
     "last_opened_file_path": "/home/tryzo/app/mesto",
@@ -159,7 +151,7 @@
       <workItem from="1686603332729" duration="46000" />
       <workItem from="1686765733011" duration="9189000" />
       <workItem from="1686854014256" duration="19000" />
-      <workItem from="1687196350360" duration="5536000" />
+      <workItem from="1687196350360" duration="6171000" />
     </task>
     <servers />
   </component>
