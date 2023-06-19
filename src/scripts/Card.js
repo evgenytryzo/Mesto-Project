@@ -28,12 +28,12 @@ export default class Card {
     this._deleteElement.addEventListener('click', () => this._handleDelete())
   }
 
-  _handleImageClick () {
-    this._openPopup(this._popupImage)
-    this._popupImageContainer.src = this._element.link
-    this._popupImageContainer.alt = this._element.name
-    this._popupName.textContent = this._element.name
-  }
+  // _handleImageClick () {
+  //   this._openPopup(this._popupImage)
+  //   this._popupImageContainer.src = this._element.link
+  //   this._popupImageContainer.alt = this._element.name
+  //   this._popupName.textContent = this._element.name
+  // }
 
   _handleLike () {
     this._likeElement.classList.toggle('element__like-button_active')
