@@ -37,7 +37,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "WebPack",
+    "git-widget-placeholder": "Additional__classes",
     "javascript.nodejs.core.library.configured.version": "18.7.0",
     "javascript.nodejs.core.library.typings.version": "18.7.0",
     "last_opened_file_path": "/home/tryzo/app/mesto",
@@ -151,7 +151,7 @@
       <workItem from="1686603332729" duration="46000" />
       <workItem from="1686765733011" duration="9189000" />
       <workItem from="1686854014256" duration="19000" />
-      <workItem from="1687196350360" duration="5871000" />
+      <workItem from="1687196350360" duration="6171000" />
     </task>
     <servers />
   </component>
