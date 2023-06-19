@@ -11,7 +11,6 @@
   <meta name="keywords" content="html, css, javascript">
   <meta name="author" content="Евгений Кривов">
 
-  <link rel="stylesheet" href="pages/index.css">
 </head>
 
 <body class="body">
@@ -20,7 +19,7 @@
 
   <header class="header">
 
-    <img class="header__logo" src="images/mesto-logo.svg" alt="Логотип 'Место'">
+    <img class="header__logo" src="<%=require('./images/mesto-logo.svg')%>" alt="Логотип 'Место'">
 
     <div class="header__line"></div>
 
@@ -30,7 +29,7 @@
 
     <section class="profile">
 
-      <img class="profile__avatar" src="images/profile-avatar.png" alt="Аватар профиля">
+      <img class="profile__avatar" src="<%=require('./images/profile-avatar.png')%>" alt="Аватар профиля">
 
       <div class="profile__info">
 
@@ -132,7 +131,7 @@
 
     <button type="button" class="element__delete"></button>
 
-    <img class="element__photo" src="images/element-kirill-pershin.jpg" alt="Фотография картины">
+    <img class="element__photo" src="#" alt="Фотография картины">
 
     <div class="element__container">
 
