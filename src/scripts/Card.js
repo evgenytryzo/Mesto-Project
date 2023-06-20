@@ -3,15 +3,15 @@ export default class Card {
     this._openPopup = openPopup
     this._element = element
     this._card = template.content
-    .querySelector('.element')
+    .querySelector(".element")
     .cloneNode(true)
-    this._elementName = this._card.querySelector('.element__name')
-    this._elementPhoto = this._card.querySelector('.element__photo')
-    this._likeElement = this._card.querySelector('.element__like-button')
-    this._deleteElement = this._card.querySelector('.element__delete')
-    this._popupImage = document.querySelector('.popup_type_image')
-    this._popupImageContainer = this._popupImage.querySelector('.popup__image')
-    this._popupName = this._popupImage.querySelector('.popup__image-name')
+    this._elementName = this._card.querySelector(".element__name")
+    this._elementPhoto = this._card.querySelector(".element__photo")
+    this._likeElement = this._card.querySelector(".element__like-button")
+    this._deleteElement = this._card.querySelector(".element__delete")
+    this._popupImage = document.querySelector(".popup_type_image")
+    this._popupImageContainer = this._popupImage.querySelector(".popup__image")
+    this._popupName = this._popupImage.querySelector(".popup__image-name")
   }
 
   generate () {
@@ -23,9 +23,9 @@ export default class Card {
   }
 
   _setEventListeners () {
-    this._elementPhoto.addEventListener('click', () => this._handleImageClick())
-    this._likeElement.addEventListener('click', () => this._handleLike())
-    this._deleteElement.addEventListener('click', () => this._handleDelete())
+    this._elementPhoto.addEventListener("click", () => this._handleImageClick())
+    this._likeElement.addEventListener("click", () => this._handleLike())
+    this._deleteElement.addEventListener("click", () => this._handleDelete())
   }
 
   // _handleImageClick () {
@@ -36,7 +36,7 @@ export default class Card {
   // }
 
   _handleLike () {
-    this._likeElement.classList.toggle('element__like-button_active')
+    this._likeElement.classList.toggle("element__like-button_active")
   }
 
   _handleDelete () {

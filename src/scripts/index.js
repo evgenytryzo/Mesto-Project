@@ -7,7 +7,7 @@ const editButtonLink = document.querySelector(".profile__edit-button-link")
 const moreInfoPopup = document.querySelector(".popup_type_edit")
 const moreInfoPopupForm = moreInfoPopup.querySelector(".popup__form")
 const profileName = document.querySelector(".profile__name")
-const detailInput = moreInfoPopup.querySelector(".popup__input_type_detail")
+const aboutInput = moreInfoPopup.querySelector(".popup__input_type_about")
 const buttonAdd = document.querySelector(".profile__add-button")
 const popupAdd = document.querySelector(".popup_type_add")
 const popupAddForm = document.querySelector(".popup__form_add")
@@ -18,7 +18,7 @@ const elementTemplate = document.querySelector(".elements-template")
 const nameInputAdd = popupAddForm.querySelector(".popup__input_type_name")
 const linkInputAdd = popupAddForm.querySelector(".popup__input_type_link")
 const nameInputEdd = popupEddForm.querySelector(".popup__input_type_name")
-const profileDetail = document.querySelector(".profile__details")
+const profileAbout = document.querySelector(".profile__about")
 
 const createNewCard = (element, openPopup, template) => {
   const card = new Card(element, openPopup, template)
@@ -73,7 +73,7 @@ initialCards.forEach(element => {
 editButtonLink.addEventListener("click", () => {
   openPopup(moreInfoPopup)
   nameInputEdd.value = profileName.textContent
-  detailInput.value = profileDetail.textContent
+  aboutInput.value = profileAbout.textContent
   profileFormValidator.resetValidation(popupEddForm)
 })
 
@@ -100,7 +100,7 @@ const popupAddSubmit = (event) => {
 moreInfoPopupForm.addEventListener("submit", (event) => {
   event.preventDefault()
   profileName.textContent = nameInputEdd.value
-  profileDetail.textContent = detailInput.value
+  profileAbout.textContent = aboutInput.value
   closePopup(moreInfoPopup)
 })
 
