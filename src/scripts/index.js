@@ -2,6 +2,7 @@ import "../pages/index.css"
 import { initialCards, config } from "./constants.js"
 import Card from "./Card.js"
 import FormValidator from "./FormValidator.js"
+import UserInfo from "./UserInfo"
 
 const editButtonLink = document.querySelector(".profile__edit-button-link")
 const moreInfoPopup = document.querySelector(".popup_type_edit")
@@ -24,6 +25,8 @@ const createNewCard = (element, openPopup, template) => {
   const card = new Card(element, openPopup, template)
   return card.generate()
 }
+
+const userInfo = new UserInfo(profileName, profileAbout)
 
 const cardFormValidator = new FormValidator(config, popupAddForm)
 cardFormValidator.enableValidation()
@@ -74,6 +77,7 @@ editButtonLink.addEventListener("click", () => {
   openPopup(moreInfoPopup)
   nameInputEdd.value = profileName.textContent
   aboutInput.value = profileAbout.textContent
+  userInfo.getUserInfo()
   profileFormValidator.resetValidation(popupEddForm)
 })
 
@@ -99,8 +103,7 @@ const popupAddSubmit = (event) => {
 
 moreInfoPopupForm.addEventListener("submit", (event) => {
   event.preventDefault()
-  profileName.textContent = nameInputEdd.value
-  profileAbout.textContent = aboutInput.value
+  userInfo.setUserInfo(nameInputEdd.value, aboutInput.value)
   closePopup(moreInfoPopup)
 })
 
