@@ -11,6 +11,7 @@ export default class FormValidator {
   }
 
   enableValidation () {
+    console.log(this._form)
     this._setEventListeners(this._form)
   }
 
@@ -30,7 +31,7 @@ export default class FormValidator {
   _setEventListeners (form) {
     this._setSubmitListener(form)
     this._inputs.forEach((input) => {
-      input.addEventListener('input', () => {
+      input.addEventListener("input", () => {
         this._checkInputValidity(input)
         this._toggleButtonValidity(form)
       })
@@ -48,10 +49,10 @@ export default class FormValidator {
   }
 
   _setSubmitListener (form) {
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
+    form.addEventListener("submit", (event) => {
+      event.preventDefault()
       this._toggleButtonValidity(form)
-    });
+    })
   }
 
   _toggleButtonValidity = (form) => {
@@ -65,22 +66,22 @@ export default class FormValidator {
   _setInputValidState = (input, errElement) => {
     input.classList.add(this._inputErrorClass)
     errElement.classList.add(this._errorClass)
-    errElement.textContent = input.validationMessage;
+    errElement.textContent = input.validationMessage
   }
 
   _setInputInvalidState = (input, errElement) => {
     input.classList.remove(this._inputErrorClass)
     errElement.classList.remove(this._errorClass)
-    errElement.textContent = ''
+    errElement.textContent = ""
   }
 
   _disableButton = (button) => {
-    button.setAttribute('disabled', '')
+    button.setAttribute("disabled", "")
     button.classList.add(this._inactiveButtonClass)
   }
 
   _enableButton = (button) => {
-    button.removeAttribute('disabled');
+    button.removeAttribute("disabled")
     button.classList.remove(this._inactiveButtonClass)
   }
 }

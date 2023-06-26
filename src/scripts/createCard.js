@@ -1,6 +1,10 @@
 import Card from "./Card"
 
-const createCard = (item, selector, openImagePopup) => {
+const createCard = (
+  item,
+  selector,
+  openImagePopup
+) => {
   const card = new Card(
     item,
     selector,
@@ -10,3 +14,4 @@ const createCard = (item, selector, openImagePopup) => {
 }
 
 export default createCard
+

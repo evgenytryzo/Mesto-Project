@@ -11,9 +11,9 @@ export default class UserInfo {
     }
   }
 
-  setUserInfo (name, about) {
-    console.log("12")
-    this._userName.textContent = name
-    this._userAbout.textContent = about
+  setUserInfo (info) {
+    console.log(info.name)
+    this._userName.textContent = info.name
+    this._userAbout.textContent = info.about
   }
 }

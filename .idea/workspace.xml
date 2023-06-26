@@ -5,10 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="effc6121-f9f1-448f-a572-29e3f21c615a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/scripts/createCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scripts/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/Card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/FormValidator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/FormValidator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/Popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/Popup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/PopupWithForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/PopupWithForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scripts/Section.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/Section.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/UserInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/UserInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/createCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/createCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,26 +43,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Additional__classes&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.7.0&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.7.0&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/tryzo/app/mesto&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.JavaScript&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Additional__classes",
+    "javascript.nodejs.core.library.configured.version": "18.7.0",
+    "javascript.nodejs.core.library.typings.version": "18.7.0",
+    "last_opened_file_path": "/home/tryzo/app/mesto",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.sourceCode.JavaScript",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Трузо\Desktop\dev\mesto\fonts" />
@@ -161,7 +167,10 @@
       <workItem from="1687247862046" duration="3533000" />
       <workItem from="1687286081507" duration="6850000" />
       <workItem from="1687459137524" duration="2341000" />
-      <workItem from="1687463644918" duration="5374000" />
+      <workItem from="1687463644918" duration="5737000" />
+      <workItem from="1687723491404" duration="599000" />
+      <workItem from="1687773902134" duration="16000" />
+      <workItem from="1687810359532" duration="6679000" />
     </task>
     <servers />
   </component>
