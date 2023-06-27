@@ -32,9 +32,7 @@ profileFormValidator.enableValidation()
 
 const cardList = new Section({
     data: initialCards, renderer: (item) => {
-      const newCard = createCard(
-        item, templateSelector, imagePopup.open
-      )
+      const newCard = createCard(item, templateSelector, imagePopup.open)
       cardList.addItem(newCard)
     }
   },

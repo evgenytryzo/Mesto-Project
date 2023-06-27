@@ -11,7 +11,6 @@ export default class FormValidator {
   }
 
   enableValidation () {
-    console.log(this._form)
     this._setEventListeners(this._form)
   }
 

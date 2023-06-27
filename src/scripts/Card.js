@@ -11,8 +11,6 @@ export default class Card {
     this._elementPhoto = this._card.querySelector(".element__photo")
     this._likeElement = this._card.querySelector(".element__like-button")
     this._deleteElement = this._card.querySelector(".element__delete")
-    this._popupImage = document.querySelector(".popup_type_image")
-    this._popupImageContainer = this._popupImage.querySelector(".popup__image")
   }
 
   generate () {
@@ -24,7 +22,7 @@ export default class Card {
   }
 
   _setEventListeners () {
-    this._elementPhoto.addEventListener("click", () => this._handleCardClick(this._popupImage))
+    this._elementPhoto.addEventListener("click", () => this._handleCardClick(this._element))
     this._likeElement.addEventListener("click", () => this._handleLike())
     this._deleteElement.addEventListener("click", () => this._handleDelete())
   }
