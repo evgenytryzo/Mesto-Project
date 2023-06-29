@@ -9,7 +9,7 @@ export default class PopupWithForm extends Popup {
     this._submitButton = this._form.querySelector(".popup__submit-btn")
   }
 
-  _getInputValues () {
+  getInputValues () {
     this._values = this._inputs.reduce((obj, input) => {
       obj[ input.name ] = input.value
       return obj
@@ -25,8 +25,7 @@ export default class PopupWithForm extends Popup {
     super.setEventListeners()
     this._form.addEventListener("submit", (event) => {
       event.preventDefault()
-      this._submitButton.textContent = `${ this._submitButton.textContent }...`
-      this._handleFormSubmit()
+      this._handleFormSubmit(this.getInputValues())
     })
   }
 
