@@ -1,5 +1,5 @@
 import "../pages/index.css"
-import { initialCards, config } from "./constants.js"
+import { config, initialCards } from "./constants.js"
 import FormValidator from "./FormValidator.js"
 import UserInfo from "./UserInfo"
 import PopupWithImage from "./PopupWithImage"
@@ -41,27 +41,24 @@ const cardList = new Section({
 cardList.renderItems()
 
 
-const profilePopup = new PopupWithForm(profileSelector, () => {
-  userInfo.setUserInfo(profilePopup._getInputValues())
+const profilePopup = new PopupWithForm(profileSelector, (data) => {
+  userInfo.setUserInfo(data)
   profilePopup.close()
 })
 profilePopup.setEventListeners()
-
 editButtonLink.addEventListener("click", () => {
   profilePopup.setInputValue(userInfo.getUserInfo())
   profilePopup.open()
 })
 
-const cardPopup = new PopupWithForm(cardSelector, () => {
-  const newCardInfo = cardPopup._getInputValues()
-  const newCard = createCard(newCardInfo, templateSelector, imagePopup.open)
+const cardPopup = new PopupWithForm(cardSelector, (data) => {
+  const newCard = createCard(data, templateSelector, imagePopup.open)
   cardList.addItem(newCard)
   cardPopup.close()
 })
 cardPopup.setEventListeners()
 
 buttonAdd.addEventListener("click", () => {
-  popupAddForm.reset()
   cardFormValidator.resetValidation(popupAddForm)
   cardPopup.open()
 })
