@@ -4,31 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="effc6121-f9f1-448f-a572-29e3f21c615a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/blocks/element/__like-container/element__like-container.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/blocks/element/__like-count/element__like-count.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/blocks/popup/__container/_type/popup__container_type_delete.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/blocks/popup/__title/popup__title.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scripts/Api.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scripts/PopupDelete.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/popup/__container/_type/popup__container_type_edit.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/__container/_type/popup__container_type_edit.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/popup/__container/popup__container.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/__container/popup__container.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/profile/__avatar/profile__avatar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/profile/__avatar/profile__avatar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scripts/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/Card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scripts/FormValidator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/FormValidator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scripts/Popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/Popup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scripts/PopupWithForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/PopupWithForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scripts/Section.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/Section.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scripts/UserInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/UserInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scripts/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/constants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scripts/createCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/createCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="effc6121-f9f1-448f-a572-29e3f21c615a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -189,7 +165,7 @@
       <workItem from="1689082224283" duration="35000" />
       <workItem from="1689374397869" duration="8927000" />
       <workItem from="1689387266089" duration="14545000" />
-      <workItem from="1689409466039" duration="18584000" />
+      <workItem from="1689409466039" duration="18939000" />
     </task>
     <servers />
   </component>
