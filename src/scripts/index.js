@@ -1,25 +1,40 @@
 import "../pages/index.css"
-import { config, initialCards } from "./constants.js"
+import {
+  config,
+  editButtonLink,
+  profileName,
+  buttonAdd,
+  popupAddForm,
+  popupEddForm,
+  profileAbout,
+  templateSelector,
+  containerSelector,
+  imageSelector,
+  profileSelector,
+  cardSelector,
+  apiToken,
+  apiURL,
+  groupId,
+  itemDelete,
+  popupAvatar,
+  buttonAvatar,
+  popupAvatarForm,
+  profileImage
+} from "./constants.js"
 import FormValidator from "./FormValidator.js"
 import UserInfo from "./UserInfo"
 import PopupWithImage from "./PopupWithImage"
 import Section from "./Section"
 import createCard from "./createCard"
 import PopupWithForm from "./PopupWithForm"
+import { Api } from "./Api"
+import PopupDelete from "./PopupDelete"
 
-const editButtonLink = document.querySelector(".profile__edit-button-link")
-const profileName = document.querySelector(".profile__name")
-const buttonAdd = document.querySelector(".profile__add-button")
-const popupAddForm = document.querySelector(".popup__form_add")
-const popupEddForm = document.querySelector(".popup__form_edit")
-const profileAbout = document.querySelector(".profile__about")
-const templateSelector = ".elements-template"
-const containerSelector = ".elements"
-const imageSelector = ".popup_type_image"
-const profileSelector = ".popup_type_edit"
-const cardSelector = ".popup_type_add"
+let myId = ""
+const api = new Api(apiToken, groupId, apiURL)
 
-const userInfo = new UserInfo(profileName, profileAbout)
+
+const userInfo = new UserInfo(profileName, profileAbout, profileImage)
 
 const imagePopup = new PopupWithImage(imageSelector)
 imagePopup.setEventListeners()
@@ -30,35 +45,118 @@ cardFormValidator.enableValidation()
 const profileFormValidator = new FormValidator(config, popupEddForm)
 profileFormValidator.enableValidation()
 
-const cardList = new Section({
-    data: initialCards, renderer: (item) => {
-      const newCard = createCard(item, templateSelector, imagePopup.open)
+const avatarPopup = new PopupWithForm(popupAvatar, () => {
+  api
+  .updateUserAvatar(avatarPopup.getInputValues())
+  .then((res) => {
+    userInfo.setUserInfo(res)
+    avatarPopup.close()
+  })
+  .catch((err) => console.error(`Ошибка: ${ err }`))
+  .finally(() => avatarPopup.setDefaultSubmitButtonText())
+})
+avatarPopup.setEventListeners()
+
+const avatarFormValidation = new FormValidator(config, popupAvatarForm)
+avatarFormValidation.enableValidation()
+
+buttonAvatar.addEventListener("click", () => {
+  avatarFormValidation.resetValidation(popupAvatarForm)
+  avatarPopup.open()
+})
+
+const handleLike = (element) => {
+  if ( element.isLike() ) {
+    api
+    .removeCardLike(element.getCardId())
+    .then((res) => {
+      element.likeContainer(res.likes)
+      element.handleLikeToggle()
+    })
+    .catch((err) => console.error(`Ошибка: ${ err }`))
+  } else
+    api
+    .likeCard(element.getCardId())
+    .then((res) => {
+      element.likeContainer(res.likes)
+      element.handleLikeToggle()
+    })
+    .catch((err) => console.error(`Ошибка: ${ err }`))
+}
+
+
+const cardList = new Section(
+  {
+    renderer: (item) => {
+      const newCard = createCard(
+        item, templateSelector, imagePopup.open, popupDelete.open, myId, handleLike
+      )
       cardList.addItem(newCard)
     }
   },
   containerSelector
 )
-cardList.renderItems()
 
-
-const profilePopup = new PopupWithForm(profileSelector, (data) => {
-  userInfo.setUserInfo(data)
-  profilePopup.close()
+const profilePopup = new PopupWithForm(profileSelector, () => {
+  api
+  .sendUser(profilePopup.getInputValues())
+  .then((res) => {
+    userInfo.setUserInfo(res)
+    profilePopup.close()
+  })
+  .catch((err) => console.error(`Ошибка: ${ err }`))
 })
 profilePopup.setEventListeners()
+
+
 editButtonLink.addEventListener("click", () => {
   profilePopup.setInputValue(userInfo.getUserInfo())
   profilePopup.open()
 })
 
-const cardPopup = new PopupWithForm(cardSelector, (data) => {
-  const newCard = createCard(data, templateSelector, imagePopup.open)
-  cardList.addItem(newCard)
-  cardPopup.close()
+const cardPopup = new PopupWithForm(cardSelector, () => {
+  api
+  .createCard(cardPopup.getInputValues())
+  .then((cardData) => {
+    cardList.addItem(
+      createCard(
+        cardData,
+        templateSelector,
+        imagePopup.open,
+        popupDelete.open,
+        myId,
+        handleLike
+      )
+    )
+    cardPopup.close()
+  })
+  .catch((err) => console.error(`Ошибка: ${ err }`))
 })
 cardPopup.setEventListeners()
+
+const popupDelete = new PopupDelete(itemDelete, (element) => {
+  api
+  .delete(element.getCardId())
+  .then(() => {
+    element.deleteCard()
+    popupDelete.close()
+  })
+  .catch((err) => console.error(`Ошибка: ${ err }`))
+  .finally(() => popupDelete.setDefaultSubmitButtonText())
+
+})
+popupDelete.setEventListeners()
 
 buttonAdd.addEventListener("click", () => {
   cardFormValidator.resetValidation(popupAddForm)
   cardPopup.open()
 })
+
+api
+.getAppInfo()
+.then(([ cardsData, userData ]) => {
+  userInfo.setUserInfo(userData)
+  myId = userData._id
+  cardList.renderItems(cardsData.reverse())
+})
+
