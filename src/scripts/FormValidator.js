@@ -55,6 +55,7 @@ export default class FormValidator {
   }
 
   _toggleButtonValidity = (form) => {
+    console.log(form)
     if ( form.checkValidity() ) {
       this._enableButton(this._submitButton)
     } else {

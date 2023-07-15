@@ -1,30 +1,3 @@
-const initialCards = [
-  {
-    name: "Архыз",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg"
-  },
-  {
-    name: "Челябинская область",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg"
-  },
-  {
-    name: "Иваново",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg"
-  },
-  {
-    name: "Камчатка",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg"
-  },
-  {
-    name: "Холмогорский район",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg"
-  },
-  {
-    name: "Байкал",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg"
-  }
-]
-
 const config = {
   formSelector: ".popup__form",
   inputSelector: ".popup__input",
@@ -34,4 +7,45 @@ const config = {
   errorClass: "popup__error_visible"
 }
 
-export { initialCards, config }
+const editButtonLink = document.querySelector(".profile__edit-button-link")
+const profileName = document.querySelector(".profile__name")
+const profileImage = document.querySelector(".profile__avatar")
+const buttonAdd = document.querySelector(".profile__add-button")
+const popupAddForm = document.querySelector(".popup__form_add")
+const popupEddForm = document.querySelector(".popup__form_edit")
+const popupAvatarForm = document.querySelector(".popup__form_avatar")
+const profileAbout = document.querySelector(".profile__about")
+const templateSelector = ".elements-template"
+const containerSelector = ".elements"
+const imageSelector = ".popup_type_image"
+const profileSelector = ".popup_type_edit"
+const cardSelector = ".popup_type_add"
+const apiToken = "127e6ee6-14ff-4018-97b4-2e2fb3bc579c"
+const groupId = "cohort-68"
+const apiURL = "https://mesto.nomoreparties.co/v1/"
+const itemDelete = ".popup_type_delete"
+const popupAvatar = ".popup_type_avatar"
+const buttonAvatar = document.querySelector(".profile__avatar")
+
+export {
+  config,
+  editButtonLink,
+  profileName,
+  buttonAdd,
+  popupAddForm,
+  popupEddForm,
+  profileAbout,
+  templateSelector,
+  containerSelector,
+  imageSelector,
+  profileSelector,
+  cardSelector,
+  apiToken,
+  groupId,
+  apiURL,
+  itemDelete,
+  popupAvatar,
+  buttonAvatar,
+  popupAvatarForm,
+  profileImage
+}

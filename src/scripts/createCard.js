@@ -1,9 +1,8 @@
 import Card from "./Card"
 
-const createCard = (item, selector, openImagePopup) => {
-  const card = new Card(item, selector, openImagePopup)
+const createCard = (item, selector, openImagePopup, popupDelete, myId, handleLike) => {
+  const card = new Card(item, selector, openImagePopup, popupDelete, myId, handleLike)
   return card.generate()
 }
 
 export default createCard
-

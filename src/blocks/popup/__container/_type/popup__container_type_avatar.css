@@ -1,4 +1,4 @@
-.popup__container_type_edit {
+.popup__container_type_avatar {
     display: flex;
     flex-direction: column;
     border-radius: 10px;
@@ -7,10 +7,4 @@
     width: 100%;
     min-width: 100px;
     background-color: white;
-}
-
-@media screen and (max-width: 470px) {
-    .popup__container_type_edit {
-        width: calc(100% - 38px);
-    }
 }

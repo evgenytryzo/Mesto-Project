@@ -1,4 +1,4 @@
-.popup__container_type_edit {
+.popup__container_type_delete {
     display: flex;
     flex-direction: column;
     border-radius: 10px;
@@ -7,10 +7,14 @@
     width: 100%;
     min-width: 100px;
     background-color: white;
+    margin: auto;
+    min-height: 181px;
 }
 
-@media screen and (max-width: 470px) {
-    .popup__container_type_edit {
-        width: calc(100% - 38px);
+@media screen and (max-width: 600px) {
+    .popup__container_type_delete {
+        max-width: 282px;
+        padding: 25px 22px;
     }
 }
+
