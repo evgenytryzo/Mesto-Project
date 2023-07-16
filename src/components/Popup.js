@@ -3,8 +3,8 @@ export default class Popup {
     this._popup = document.querySelector(selector)
     this._closeButton = this._popup.querySelector(".popup__close")
     this._handleEscClose = this._handleEscClose.bind(this)
-    this._form = this._popup.querySelector(".popup__form")
   }
+
 
   open () {
     document.addEventListener("keydown", this._handleEscClose)

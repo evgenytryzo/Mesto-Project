@@ -40,7 +40,7 @@ export class Api {
     }).then(this._getResponse)
   }
 
-  sendUser ({ name, about }) {
+  updateUser ({ name, about }) {
     return fetch(`${ this._url }${ this._groupId }/users/me`, {
       method: "PATCH",
       headers: this._headers,
@@ -51,7 +51,7 @@ export class Api {
     }).then(this._getResponse)
   }
 
-  delete (cardId) {
+  deleteCard (cardId) {
     return fetch(`${ this._url }${ this._groupId }/cards/${ cardId }`, {
       method: "DELETE",
       headers: this._headers
@@ -72,13 +72,13 @@ export class Api {
     }).then(this._getResponse)
   }
 
-  updateUserAvatar({ avatar }) {
-    return fetch(`${this._url}${this._groupId}/users/me/avatar`, {
-      method: 'PATCH',
+  updateUserAvatar ({ avatar }) {
+    return fetch(`${ this._url }${ this._groupId }/users/me/avatar`, {
+      method: "PATCH",
       headers: this._headers,
       body: JSON.stringify({
-        avatar,
-      }),
-    }).then(this._getResponse);
+        avatar
+      })
+    }).then(this._getResponse)
   }
 }
