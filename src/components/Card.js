@@ -1,12 +1,12 @@
 export default class Card {
-  constructor (element, template, handleCardClick, popupDelete, myId, handleLike) {
+  constructor (element, template, handleCardClick, handleCardDelete, currentUserId, handleLike) {
     this._template = template
     this._handleLike = handleLike
     this._cardId = element._id
     this._handleCardClick = handleCardClick
     this._element = element
     this._ownerId = element.owner._id
-    this._like = element.likes
+    this._likes = element.likes
     this._card = document
     .querySelector(this._template)
     .content.cloneNode(true)
@@ -16,25 +16,25 @@ export default class Card {
     this._likeElement = this._card.querySelector(".element__like-button")
     this._likeContainer = this._card.querySelector(".element__like-count")
     this._deleteElement = this._card.querySelector(".element__delete")
-    this._myId = myId
-    this._delete = popupDelete
+    this._currentUserId = currentUserId
+    this._handleDelete = handleCardDelete
   }
 
   isLike () {
-    return this._like.some((element) => element._id === this._myId)
+    return this._likes.some((element) => element._id === this._currentUserId)
   }
 
-  likeContainer (like) {
-    this._like = like
-    this._likeContainer.textContent = like.length
+  updateLikes (likes) {
+    this._likes = likes
+    this._likeContainer.textContent = likes.length
   }
 
-  _deleteMyCard () {
-    if ( this._myId === this._ownerId ) this._deleteElement.style.display = "block"
+  _checkDeleteButtonVisibility () {
+    if ( this._currentUserId === this._ownerId ) this._deleteElement.style.display = "block"
     else (this._deleteElement.style.display = "none")
   }
 
-  deleteCard () {
+  removeCard () {
     this._card.remove()
     this._card = null
   }
@@ -48,20 +48,20 @@ export default class Card {
     this._elementPhoto.src = this._element.link
     this._elementPhoto.alt = this._element.name
 
-    this.likeContainer(this._element.likes)
+    this.updateLikes(this._element.likes)
 
     if ( this.isLike() ) {
       this._likeElement.classList.add("element__like-button_active")
     }
     this._setEventListeners()
-    this._deleteMyCard()
+    this._checkDeleteButtonVisibility()
     return this._card
   }
 
   _setEventListeners () {
     this._elementPhoto.addEventListener("click", () => this._handleCardClick(this._element))
     this._likeElement.addEventListener("click", () => this._handleLike(this))
-    this._deleteElement.addEventListener("click", () => this._delete(this))
+    this._deleteElement.addEventListener("click", () => this._handleDelete(this))
   }
 
   handleLikeToggle () {

@@ -1,4 +1,4 @@
-const config = {
+const validationConfig = {
   formSelector: ".popup__form",
   inputSelector: ".popup__input",
   submitButtonSelector: ".popup__submit-btn",
@@ -23,12 +23,12 @@ const cardSelector = ".popup_type_add"
 const apiToken = "127e6ee6-14ff-4018-97b4-2e2fb3bc579c"
 const groupId = "cohort-68"
 const apiURL = "https://mesto.nomoreparties.co/v1/"
-const itemDelete = ".popup_type_delete"
-const popupAvatar = ".popup_type_avatar"
-const buttonAvatar = document.querySelector(".profile__avatar")
+const itemDeleteSelector = ".popup_type_delete"
+const popupAvatarSelector = ".popup_type_avatar"
+const buttonAvatar = document.querySelector(".profile__avatar-edd")
 
 export {
-  config,
+  validationConfig,
   editButtonLink,
   profileName,
   buttonAdd,
@@ -43,8 +43,8 @@ export {
   apiToken,
   groupId,
   apiURL,
-  itemDelete,
-  popupAvatar,
+  itemDeleteSelector,
+  popupAvatarSelector,
   buttonAvatar,
   popupAvatarForm,
   profileImage
