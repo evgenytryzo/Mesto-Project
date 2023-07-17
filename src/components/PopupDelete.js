@@ -5,7 +5,6 @@ export default class PopupDelete extends Popup {
     super(popupSelector)
     this._handleFormSubmit = handleFormSubmit
     this._submitButton = this._popup.querySelector(".popup__submit-btn")
-    this._defaultSubmitButtonText = this._submitButton.textContent
     this._form = this._popup.querySelector(".popup__form")
   }
 
@@ -19,8 +18,8 @@ export default class PopupDelete extends Popup {
     })
   }
 
-  setSubmitButtonText () {
-    this._submitButton.textContent = this._submitButton.textContent + "..."
+  setSubmitButtonText (text) {
+    this._submitButton.textContent = text
   }
   setDefaultSubmitButtonText () {
     this._submitButton.textContent = this._defaultSubmitButtonText
