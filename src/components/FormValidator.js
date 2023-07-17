@@ -72,12 +72,12 @@ export default class FormValidator {
     errElement.textContent = ""
   }
 
-  _disableButton = (button) => {
+  _disableButton = () => {
     this._submitButton.setAttribute("disabled", "")
     this._submitButton.classList.add(this._inactiveButtonClass)
   }
 
-  _enableButton = (button) => {
+  _enableButton = () => {
     this._submitButton.removeAttribute("disabled", "")
     this._submitButton.classList.remove(this._inactiveButtonClass)
   }

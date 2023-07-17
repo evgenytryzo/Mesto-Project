@@ -42,10 +42,10 @@ const cardFormValidator = new FormValidator(validationConfig, popupAddForm)
 
 const profileFormValidator = new FormValidator(validationConfig, popupEddForm)
 
-const avatarPopup = new PopupWithForm(popupAvatarSelector, () => {
-  avatarPopup.setSubmitButtonText()
+const avatarPopup = new PopupWithForm(popupAvatarSelector, (formData) => {
+  avatarPopup.setSubmitButtonText("Сохранить...")
   api
-  .updateUserAvatar(avatarPopup.getInputValues())
+  .updateUserAvatar(formData)
   .then((res) => {
     userInfo.setUserInfo(res)
     avatarPopup.close()
@@ -56,10 +56,10 @@ const avatarPopup = new PopupWithForm(popupAvatarSelector, () => {
 
 const avatarFormValidation = new FormValidator(validationConfig, popupAvatarForm)
 
-const profilePopup = new PopupWithForm(profileSelector, () => {
-  profilePopup.setSubmitButtonText()
+const profilePopup = new PopupWithForm(profileSelector, (formData) => {
+  profilePopup.setSubmitButtonText("Сохранить...")
   api
-  .updateUser(profilePopup.getInputValues())
+  .updateUser(formData)
   .then((res) => {
     userInfo.setUserInfo(res)
     profilePopup.close()
@@ -68,10 +68,10 @@ const profilePopup = new PopupWithForm(profileSelector, () => {
   .finally(() => profilePopup.setDefaultSubmitButtonText())
 })
 
-const cardPopup = new PopupWithForm(cardSelector, () => {
-  cardPopup.setSubmitButtonText()
+const cardPopup = new PopupWithForm(cardSelector, (formData) => {
+  cardPopup.setSubmitButtonText("Создать...")
   api
-  .createCard(cardPopup.getInputValues())
+  .createCard(formData)
   .then((cardData) => {
     cardsSection.addItem(
       createCard(
@@ -90,7 +90,7 @@ const cardPopup = new PopupWithForm(cardSelector, () => {
 })
 
 const popupDelete = new PopupDelete(itemDeleteSelector, (element) => {
-  popupDelete.setSubmitButtonText()
+  popupDelete.setSubmitButtonText("Да...")
   api
   .deleteCard(element.getCardId())
   .then(() => {

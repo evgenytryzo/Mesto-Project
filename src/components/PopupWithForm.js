@@ -31,8 +31,8 @@ export default class PopupWithForm extends Popup {
     })
   }
 
-  setSubmitButtonText () {
-    this._submitButton.textContent = this._submitButton.textContent + "..."
+  setSubmitButtonText(text) {
+    this._submitButton.textContent = text;
   }
 
   setDefaultSubmitButtonText () {
